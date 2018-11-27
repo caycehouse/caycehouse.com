@@ -15,6 +15,8 @@ export default function Template({
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
+          {/* Disable no-danger as we are providing HTML safe content */}
+          {/* eslint-disable react/no-danger */}
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
