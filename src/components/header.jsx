@@ -29,28 +29,26 @@ export default class Header extends React.Component {
   render() {
     const { isOpen } = this.state;
     return (
-      <div>
-        <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/" className="d-md-none">
-            caycehouse.com
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mx-auto" navbar>
-              <NavItem>
-                <Link to="/" className="nav-link" activeClassName="active">
-                  Home
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/blog" className="nav-link" activeClassName="active">
-                  Blog
-                </Link>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <Navbar color="dark" dark expand="md">
+        <NavbarBrand href="/" className="d-md-none">
+          caycehouse.com
+        </NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mx-auto" navbar>
+            <NavItem>
+              <Link to="/" className="nav-link" activeClassName="active">
+                Home
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link to="/blog" className="nav-link" activeClassName="active">
+                Blog
+              </Link>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
     );
   }
 }
