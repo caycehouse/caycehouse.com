@@ -22,7 +22,7 @@ export default class Index extends React.Component {
       <Layout>
         <React.Fragment>
           <Particles
-            style={{ position: 'fixed', zIndex: '-1' }}
+            style={{ position: 'fixed' }}
             params={{
               particles: {
                 number: {
@@ -47,7 +47,11 @@ export default class Index extends React.Component {
               alt="Cayce House"
               className="img-responsive rounded-circle"
               src={profileImg}
-              style={{ maxHeight: '250px' }}
+              style={{
+                maxHeight: '250px',
+                zIndex: '999',
+                position: 'relative',
+              }}
             />
             <h1 className="display-2 mt-2">Cayce House</h1>
             <h2>Web & App Developer</h2>
