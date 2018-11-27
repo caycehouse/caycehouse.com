@@ -8,7 +8,7 @@ const PostLink = ({ post }) => (
       <h2>{post.frontmatter.title}</h2>
     </Link>
     <p>{post.excerpt}</p>
-    <p>{post.frontmatter.date}</p>
+    <span className="text-muted">{post.frontmatter.date}</span>
   </div>
 );
 
