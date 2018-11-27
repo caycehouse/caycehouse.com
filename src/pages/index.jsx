@@ -1,3 +1,10 @@
 import React from 'react';
 
-export default () => <div>Hello world!</div>;
+const test = ['hello', 'eyllow', 'sdf'];
+
+export default () => (
+  <div>
+    {test}
+    Hello world!
+  </div>
+);
