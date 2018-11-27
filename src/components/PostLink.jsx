@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 const PostLink = ({ post }) => (
-  <div>
+  <div className="py-5">
     <Link to={post.fields.slug}>
-      {`${post.frontmatter.title} (${post.frontmatter.date})`}
+      <h2>{post.frontmatter.title}</h2>
     </Link>
+    <p>{post.excerpt}</p>
+    <p>{post.frontmatter.date}</p>
   </div>
 );
 

@@ -16,7 +16,10 @@ const Blog = ({
 
   return (
     <Layout>
-      <React.Fragment>{Posts}</React.Fragment>
+      <div className="container">
+        <h1 className="display-4 text-center">Cayce&apos;s Blog</h1>
+        {Posts}
+      </div>
     </Layout>
   );
 };
