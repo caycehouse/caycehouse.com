@@ -1,8 +1,3 @@
----
-title: 'Hello World!'
-date: '2018-11-27'
----
-
 This is the first of hopefully many blog posts on my site here.
 I’m hoping to document all of the tech stuff I do on the side on this blog in order to reference it later when I need it, or maybe for someone else to read and learn from.
 

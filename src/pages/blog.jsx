@@ -11,7 +11,7 @@ const Blog = ({
   },
 }) => {
   const Posts = edges
-    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => !!edge.node.fields.date) // You can filter your posts based on some criteria
     .map(edge => <PostLink key={edge.node.fields.slug} post={edge.node} />);
 
   return (
@@ -38,15 +38,13 @@ export const pageQuery = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
       edges {
         node {
           excerpt
           fields {
-            slug
-          }
-          frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            slug
             title
           }
         }

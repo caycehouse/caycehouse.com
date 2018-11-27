@@ -6,13 +6,13 @@ import Layout from '../components/Layout';
 
 const PostTemplate = ({ data }) => {
   const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { fields, html } = markdownRemark;
 
   return (
     <Layout>
       <div className="container" style={{ maxWidth: '768px' }}>
-        <h1 className="display-4">{frontmatter.title}</h1>
-        <h2 className="h5 text-muted">{frontmatter.date}</h2>
+        <h1 className="display-4">{fields.title}</h1>
+        <h2 className="h5 text-muted">{fields.date}</h2>
         {/* Disable no-danger as we are providing HTML safe content */}
         {/* eslint-disable react/no-danger */}
         <p dangerouslySetInnerHTML={{ __html: html }} />
@@ -38,9 +38,9 @@ export const pageQuery = graphql`
       id
       excerpt
       html
-      frontmatter {
-        title
+      fields {
         date(formatString: "MMMM DD, YYYY")
+        title
       }
     }
   }
