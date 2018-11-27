@@ -1,9 +1,9 @@
 import React from 'react';
+import Link from 'gatsby-link';
 import {
   Collapse,
   Nav,
   NavItem,
-  NavLink,
   Navbar,
   NavbarBrand,
   NavbarToggler,
@@ -38,10 +38,14 @@ export default class Header extends React.Component {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mx-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <Link to="/" className="nav-link" activeClassName="active">
+                  Home
+                </Link>
               </NavItem>
               <NavItem>
-                <NavLink href="/blog">Blog</NavLink>
+                <Link to="/blog" className="nav-link" activeClassName="active">
+                  Blog
+                </Link>
               </NavItem>
             </Nav>
           </Collapse>
