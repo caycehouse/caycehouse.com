@@ -1,7 +1,4 @@
 {
-  "ecmaFeatures": {
-    "jsx": true
-  },
   "extends": ["airbnb", "prettier", "react-app", "plugin:prettier/recommended"],
   "parser": "babel-eslint",
   "plugins": ["prettier"],
