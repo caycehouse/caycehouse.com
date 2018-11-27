@@ -6,8 +6,7 @@ import Layout from '../components/Layout';
 import SocialIcons from '../components/SocialIcons';
 
 export default class Index extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     document.body.style.backgroundColor = '#525ddc';
     document.body.style.color = '#fff';
   }
