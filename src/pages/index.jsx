@@ -9,10 +9,12 @@ export default class Index extends React.Component {
   constructor(props) {
     super(props);
     document.body.style.backgroundColor = '#525ddc';
+    document.body.style.color = '#fff';
   }
 
   componentWillUnmount() {
     document.body.style.backgroundColor = null;
+    document.body.style.color = null;
   }
 
   render() {
