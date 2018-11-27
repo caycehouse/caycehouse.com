@@ -4,11 +4,10 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data; // data.markdownRemark holds our post data
+const PostTemplate = ({ data }) => {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
+
   return (
     <Layout>
       <div className="blog-post-container">
@@ -25,20 +24,28 @@ export default function Template({
       </div>
     </Layout>
   );
-}
-
-Template.propTypes = {
-  data: PropTypes.element.isRequired,
 };
 
+PostTemplate.propTypes = {
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+};
+
+export default PostTemplate;
+
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostBySlug($slug: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        path
         title
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

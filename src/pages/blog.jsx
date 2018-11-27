@@ -12,27 +12,38 @@ const Blog = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.id} post={edge.node} />);
+    .map(edge => <PostLink key={edge.node.fields.slug} post={edge.node} />);
 
-  return <Layout>{Posts}</Layout>;
+  return (
+    <Layout>
+      <React.Fragment>{Posts}</React.Fragment>
+    </Layout>
+  );
 };
 
 Blog.propTypes = {
-  data: PropTypes.element.isRequired,
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default Blog;
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          id
-          excerpt(pruneLength: 250)
+          excerpt
+          fields {
+            slug
+          }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            path
             title
           }
         }
