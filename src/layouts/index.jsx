@@ -12,7 +12,7 @@ const Layout = ({ children, data }) => (
       title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
+        { name: 'keywords', content: 'sample, something' },
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
@@ -25,7 +25,7 @@ const Layout = ({ children, data }) => (
 
 Layout.propTypes = {
   children: PropTypes.func,
-  data: PropTypes.any
+  data: PropTypes.any,
 };
 
 export default Layout;

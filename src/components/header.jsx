@@ -17,11 +17,11 @@ const Header = ({ siteTitle }) => (
 );
 
 Header.propTypes = {
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
 };
 
 Header.defaultProps = {
-  siteTitle: 'Site Title not Set'
+  siteTitle: 'Site Title not Set',
 };
 
 export default Header;
