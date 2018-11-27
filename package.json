@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "caycehouse.com",
+  "description": "My personal website and blog powered by Gatsby",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
