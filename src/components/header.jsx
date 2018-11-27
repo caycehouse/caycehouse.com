@@ -30,7 +30,7 @@ export default class Header extends React.Component {
     const { isOpen } = this.state;
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/" className="d-md-none">
             caycehouse.com
           </NavbarBrand>
