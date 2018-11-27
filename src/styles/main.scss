@@ -1,8 +1,8 @@
-// Import variable overrides
+// Variables
 @import 'variables';
 
-// Bootstrap and its default variables
-@import 'node_modules/bootstrap/scss/bootstrap';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
 
 // Import Sticky footer styles
 @import 'sticky-footer';

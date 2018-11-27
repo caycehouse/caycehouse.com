@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default () => (
-  <footer className="footer bg-dark">
+  <footer className="footer bg-light">
     <div className="container text-center">
-      <span className="text-white-50">
+      <span className="text-black-50">
         Copyright &copy;
         {` 2010 - ${new Date().getFullYear()} `}
         {'Cayce House | Powered by '}
