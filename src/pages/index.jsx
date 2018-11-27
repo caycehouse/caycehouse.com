@@ -7,7 +7,7 @@ export default () => (
   <Layout>
     <React.Fragment>
       <Particles
-        style={{ position: 'absolute' }}
+        style={{ position: 'fixed' }}
         params={{
           particles: {
             number: {
