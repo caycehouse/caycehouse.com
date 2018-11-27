@@ -22,7 +22,7 @@ export default class Index extends React.Component {
       <Layout>
         <React.Fragment>
           <Particles
-            style={{ position: 'fixed' }}
+            style={{ position: 'fixed', top: 0 }}
             params={{
               particles: {
                 number: {
