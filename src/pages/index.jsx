@@ -1,13 +1,15 @@
 import React from 'react';
 import Particles from 'react-particles-js';
+import profileImg from './profile-img.jpeg';
 
 import Layout from '../components/Layout';
+import SocialIcons from '../components/SocialIcons';
 
 export default () => (
   <Layout>
     <React.Fragment>
       <Particles
-        style={{ position: 'fixed' }}
+        style={{ position: 'fixed', zIndex: '-1' }}
         params={{
           particles: {
             number: {
@@ -27,7 +29,19 @@ export default () => (
           },
         }}
       />
-      <h1 className="text-center">Index</h1>
+      <div className="text-center mt-5">
+        <img
+          alt="Cayce House"
+          className="img-responsive rounded-circle"
+          src={profileImg}
+          style={{ maxHeight: '250px' }}
+        />
+        <h1 className="display-2 mt-2">Cayce House</h1>
+        <h2>Web & App Developer</h2>
+        <div className="mt-5">
+          <SocialIcons />
+        </div>
+      </div>
     </React.Fragment>
   </Layout>
 );
