@@ -10,17 +10,12 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.title}</h1>
-          <h2>{frontmatter.date}</h2>
-          {/* Disable no-danger as we are providing HTML safe content */}
-          {/* eslint-disable react/no-danger */}
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
+      <div className="container" style={{ maxWidth: '768px' }}>
+        <h1 className="display-4">{frontmatter.title}</h1>
+        <h2 className="h5 text-muted">{frontmatter.date}</h2>
+        {/* Disable no-danger as we are providing HTML safe content */}
+        {/* eslint-disable react/no-danger */}
+        <p dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   );

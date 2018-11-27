@@ -16,7 +16,7 @@ const Blog = ({
 
   return (
     <Layout>
-      <div className="container">
+      <div className="container" style={{ maxWidth: '768px' }}>
         <h1 className="display-4 text-center">Cayce&apos;s Blog</h1>
         {Posts}
       </div>
