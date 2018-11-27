@@ -14,3 +14,6 @@ script:
   - npm install
   - npm run lint
   - npm run build
+
+on_success:
+  - curl -X POST -d {} DEPLOY_HOOK_URL
