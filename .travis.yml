@@ -15,5 +15,7 @@ script:
   - npm run lint
   - npm run build
 
-on_success:
-  - curl -X POST -d {} DEPLOY_HOOK_URL
+jobs:
+  include:
+    - stage: deploy
+      script: curl -X POST -d {} DEPLOY_HOOK_URL
