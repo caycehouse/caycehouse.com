@@ -1,5 +1,10 @@
 import React from 'react';
 
-import '../layouts/index.scss';
+import Layout from '../components/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default () => <div>Hello world!</div>;
+export default () => (
+  <Layout>
+    <div>Hello world!</div>
+  </Layout>
+);

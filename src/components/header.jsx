@@ -1,27 +1,52 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import {
+  Collapse,
+  Nav,
+  NavItem,
+  NavLink,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+} from 'reactstrap';
 
-const Header = ({ siteTitle }) => (
-  <nav
-    className="navbar is-primary"
-    role="navigation"
-    aria-label="main navigation"
-  >
-    <div className="navbar-brand">
-      <Link className="navbar-item" to="/">
-        {siteTitle}
-      </Link>
-    </div>
-  </nav>
-);
+export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false,
+    };
+  }
 
-Header.defaultProps = {
-  siteTitle: 'Site Title not Set',
-};
+  toggle() {
+    const { isOpen } = this.state;
+    this.setState({
+      isOpen: !isOpen,
+    });
+  }
 
-export default Header;
+  render() {
+    const { isOpen } = this.state;
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/" className="d-md-none">
+            caycehouse.com
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mx-auto" navbar>
+              <NavItem>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/blog">Blog</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
