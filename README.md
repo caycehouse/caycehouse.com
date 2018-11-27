@@ -1,6 +1,6 @@
 # caycehouse.com
 
-My personal website and blog powered by Gatsby.
+My personal website and blog powered by Gatsby and host on Netlify.
 
 ## Status
 
