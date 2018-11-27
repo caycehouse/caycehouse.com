@@ -49,7 +49,7 @@ export default class Index extends React.Component {
               src={profileImg}
               style={{
                 maxHeight: '250px',
-                zIndex: '999',
+                zIndex: 999,
                 position: 'relative',
               }}
             />
