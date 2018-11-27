@@ -4,6 +4,6 @@ import Layout from '../components/Layout';
 
 export default () => (
   <Layout>
-    <h1 className="text-center">Index</h1>
+    <h1 className="text-center">Blog</h1>
   </Layout>
 );
