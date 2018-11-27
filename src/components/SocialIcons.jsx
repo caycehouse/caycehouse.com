@@ -15,7 +15,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span className="fa-layers fa-fw fa-6x">
+      <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#3b5998" />
         <FontAwesomeIcon icon={faFacebookF} inverse transform="shrink-6" />
       </span>
@@ -25,7 +25,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span className="fa-layers fa-fw fa-6x">
+      <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#00aced" />
         <FontAwesomeIcon icon={faTwitter} inverse transform="shrink-6" />
       </span>
@@ -35,7 +35,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span className="fa-layers fa-fw fa-6x">
+      <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#cd486b" />
         <FontAwesomeIcon icon={faInstagram} inverse transform="shrink-6" />
       </span>
@@ -45,7 +45,7 @@ export default () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <span className="fa-layers fa-fw fa-6x">
+      <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#000" />
         <FontAwesomeIcon icon={faGithub} inverse transform="shrink-6" />
       </span>
