@@ -1,10 +1,9 @@
 language: ruby
+script: script/cibuild
+cache: bundler
+sudo: false
 rvm:
-  - 2.4.1
   - 2.5.3
-  - ruby-head
-
-script: ./script/cibuild
 
 env:
   global:
@@ -15,7 +14,7 @@ addons:
     packages:
     - libcurl4-openssl-dev
 
-sudo: false
 
-cache: bundler
-
+before_install:
+  - gem update --system
+  - gem install bundler
