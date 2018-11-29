@@ -24,7 +24,6 @@ github_username: caycehouse
 
 # Build settings
 markdown: kramdown
-theme: minima
 source: src
 plugins:
   - jekyll-feed
