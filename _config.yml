@@ -24,7 +24,6 @@ github_username: caycehouse
 
 # Build settings
 markdown: kramdown
-source: src
 plugins:
   - jekyll-feed
 
