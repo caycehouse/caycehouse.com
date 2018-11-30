@@ -2,7 +2,6 @@ language: ruby
 script: script/cibuild
 cache: bundler
 sudo: false
-exclude: [vendor]
 rvm:
   - 2.4.1
 
