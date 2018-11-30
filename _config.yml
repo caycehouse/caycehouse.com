@@ -27,10 +27,3 @@ markdown: kramdown
 plugins:
   - jekyll-feed
 
-exclude:
-  - vendor
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - script
