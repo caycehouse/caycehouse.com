@@ -21,6 +21,7 @@ before_install:
 
 deploy:
   provider: pages
+  local-dir: _site
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   on:
