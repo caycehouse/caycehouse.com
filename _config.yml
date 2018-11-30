@@ -27,3 +27,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
 
+exclude:
+  - LICENSE
+  - README.md
+  - script
