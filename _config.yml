@@ -30,4 +30,5 @@ plugins:
 exclude:
   - LICENSE
   - README.md
-  - script/
+  - script
+  - vendor
