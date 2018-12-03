@@ -1,6 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import profileImg from './profile-img.jpeg';
+import profileImg from '../images/profile-img.jpeg';
 
 import Layout from '../components/Layout';
 import SocialIcons from '../components/SocialIcons';

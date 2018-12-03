@@ -1,6 +1,6 @@
 import React from 'react';
 
-import vikingHead from './viking-head.png';
+import vikingHead from '../images/viking-head.png';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
