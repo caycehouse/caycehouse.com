@@ -1,0 +1,110 @@
+html {
+  min-height: 100%;
+  position: relative
+}
+
+body {
+  font-family: helveticaneue-light, helvetica neue light, helvetica neue, Helvetica, Arial, lucida grande, sans-serif;
+  font-weight: 300;
+  margin-bottom: 60px
+}
+
+noscript {
+  color: #d9534f;
+  font-size: 23px
+}
+
+.footer {
+  bottom: 0;
+  height: 60px;
+  position: absolute;
+  text-align: center;
+  width: 100%
+}
+
+#clock-title {
+  color: #2d499d
+}
+
+#date {
+  float: right
+}
+
+#viking-img {
+  position: absolute;
+  top: 25px;
+  right: 25px
+}
+
+@media(max-width:768px) {
+  #clock-title {
+    font-size: 400%
+  }
+
+  #date {
+    font-size: 200%
+  }
+
+  #time {
+    font-size: 525%
+  }
+
+  #viking-img {
+    width: 50px
+  }
+}
+
+@media(min-width:768px) {
+  #clock-title {
+    font-size: 600%
+  }
+
+  #date {
+    font-size: 200%
+  }
+
+  #time {
+    font-size: 1000%
+  }
+
+  #viking-img {
+    width: 100px
+  }
+}
+
+@media(min-width:992px) {
+  #clock-title {
+    font-size: 800%
+  }
+
+  #date {
+    font-size: 300%
+  }
+
+  #time {
+    font-size: 1300%
+  }
+
+  #viking-img {
+    width: 130px
+  }
+}
+
+@media(min-width:1200px) {
+  #clock-title {
+    font-size: 1000%
+  }
+
+  #date {
+    font-size: 400%
+  }
+
+  #time {
+    font-size: 1600%
+  }
+
+  #viking-img {
+    width: 150px
+  }
+}
+

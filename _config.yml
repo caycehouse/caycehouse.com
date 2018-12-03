@@ -33,3 +33,5 @@ exclude:
   - script
   - vendor
 
+source: src
+destination: public
