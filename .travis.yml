@@ -22,11 +22,10 @@ script:
 jobs:
   include:
     - stage: deploy
-      before_script:
-        - npm install netlify-cli -g
       deploy:
-        provider: script
-        script: netlify deploy -p
-        skip_cleanup: true
+        provider: pages
+        local-dir: public
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
         on:
           branch: master
