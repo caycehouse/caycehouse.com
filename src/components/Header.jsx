@@ -1,54 +1,27 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import {
-  Collapse,
-  Nav,
-  NavItem,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-} from 'reactstrap';
+import { StaticQuery, graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
-export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  toggle() {
-    const { isOpen } = this.state;
-    this.setState({
-      isOpen: !isOpen,
-    });
-  }
-
-  render() {
-    const { isOpen } = this.state;
-    return (
-      <Navbar color="light" light expand="md" style={{ zIndex: 999 }}>
-        <NavbarBrand href="/" className="d-md-none">
-          caycehouse.com
-        </NavbarBrand>
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mx-auto" navbar>
-            <NavItem>
-              <Link to="/" className="nav-link" activeClassName="active">
-                Home
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link to="/blog" className="nav-link" activeClassName="active">
-                Blog
-              </Link>
-            </NavItem>
-          </Nav>
-        </Collapse>
-      </Navbar>
-    );
-  }
-}
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `}
+    render={({ site: { siteMetadata: seo } }) => (
+      <React.Fragment>
+        <Helmet>
+          <html lang="en" />
+          <title>{`${seo.title} | ${seo.description}`}</title>
+          <meta name="description" content={seo.description} />
+        </Helmet>
+      </React.Fragment>
+    )}
+  />
+);
