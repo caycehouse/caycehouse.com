@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import MainNavbar from './MainNavbar';
 import Footer from './Footer';
-import '../styles/main.scss';
 
 const Layout = ({ children }) => (
   <React.Fragment>
