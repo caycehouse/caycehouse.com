@@ -14,6 +14,7 @@ export default () => (
       href="https://facebook.com/caycehouse"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Cayce's Facebook"
     >
       <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#3b5998" />
@@ -24,6 +25,7 @@ export default () => (
       href="https://twitter.com/caycehouse"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Cayce's Twitter"
     >
       <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#00aced" />
@@ -34,6 +36,7 @@ export default () => (
       href="https://instagram.com/caycehouse"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Cayce's Instagram"
     >
       <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#cd486b" />
@@ -44,6 +47,7 @@ export default () => (
       href="https://github.com/caycehouse"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Cayce's Github"
     >
       <span className="fa-layers fa-fw fa-4x">
         <FontAwesomeIcon icon={faSquare} color="#000" />
