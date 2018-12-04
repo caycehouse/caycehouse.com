@@ -23,7 +23,7 @@ const Footer = styled.footer`
 export default () => (
   <Footer className="footer bg-light">
     <div className="container text-center">
-      <span className="text-muted">
+      <span className="text-dark">
         &copy;
         {` ${new Date().getFullYear()} Cayce House | Powered by `}
         <a href="//sumojoe.com" target="_blank" rel="noopener noreferrer">
