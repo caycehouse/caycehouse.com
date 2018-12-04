@@ -1,6 +1,8 @@
 import React from 'react';
+import Img from 'gatsby-image';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import vikingHead from '../images/viking-head.png';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -30,15 +32,15 @@ export default class Clock extends React.Component {
 
   render() {
     const { time, date } = this.state;
+    const { data } = this.props;
     return (
       <div>
         <Header />
         <div className="container">
-          <img
-            src={vikingHead}
+          <Img
             alt="Conley Viking Logo"
+            fixed={data.vikingHeadImg.childImageSharp.fixed}
             style={{
-              width: '150px',
               position: 'absolute',
               top: '25px',
               right: '25px',
@@ -63,3 +65,19 @@ export default class Clock extends React.Component {
     );
   }
 }
+
+Clock.propTypes = {
+  data: PropTypes.shape({ vikingHeadImg: PropTypes.object }).isRequired,
+};
+
+export const query = graphql`
+  query {
+    vikingHeadImg: file(relativePath: { eq: "viking-head.png" }) {
+      childImageSharp {
+        fixed(width: 150) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;

@@ -1,6 +1,8 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import profileImg from '../images/profile-img.jpeg';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
 import SocialIcons from '../components/SocialIcons';
@@ -17,6 +19,7 @@ export default class Index extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
     return (
       <Layout>
         <React.Fragment>
@@ -42,12 +45,11 @@ export default class Index extends React.Component {
             }}
           />
           <div className="text-center mt-5">
-            <img
+            <Img
               alt="Cayce House"
+              fixed={data.profileImg.childImageSharp.fixed}
               className="img-responsive rounded-circle"
-              src={profileImg}
               style={{
-                maxHeight: '250px',
                 zIndex: 999,
                 position: 'relative',
               }}
@@ -63,3 +65,19 @@ export default class Index extends React.Component {
     );
   }
 }
+
+Index.propTypes = {
+  data: PropTypes.shape({ profileImg: PropTypes.object }).isRequired,
+};
+
+export const query = graphql`
+  query {
+    profileImg: file(relativePath: { eq: "profile-img.jpeg" }) {
+      childImageSharp {
+        fixed(width: 250, height: 250) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;

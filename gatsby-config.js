@@ -1,14 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: 'Cayce House',
-    description: 'Web & App Developer',
+    title: `Cayce House`,
+    description: `Web & App Developer`,
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts`,
-        name: 'posts',
+        name: `posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
+        name: `images`,
       },
     },
     {
@@ -24,10 +31,11 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-eslint',
-    'gatsby-plugin-sass',
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-eslint`,
+    `gatsby-plugin-sass`,
   ],
 };
