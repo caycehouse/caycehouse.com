@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
+import { createGlobalStyle } from 'styled-components';
 import {
   Collapse,
   Nav,
@@ -8,6 +9,19 @@ import {
   NavbarBrand,
   NavbarToggler,
 } from 'reactstrap';
+
+const GlobalStyle = createGlobalStyle`
+  .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.6)
+  }
+
+  .navbar-light .navbar-nav .active>.nav-link,
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link.show,
+  .navbar-light .navbar-nav .show>.nav-link {
+    color: #525ddc;
+  }
+`;
 
 export default class MainNavbar extends React.Component {
   constructor(props) {
@@ -48,6 +62,7 @@ export default class MainNavbar extends React.Component {
             </NavItem>
           </Nav>
         </Collapse>
+        <GlobalStyle />
       </Navbar>
     );
   }
