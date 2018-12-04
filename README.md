@@ -1,10 +1,10 @@
 # caycehouse.com
 
-My personal website and blog powered by Gatsby and host on Github Pages.
+My personal website and blog powered by Gatsby and host on Netlify.
 
 ## Status
 
-[![Build Status](https://travis-ci.com/caycehouse/caycehouse.com.svg?branch=gatsby)](https://travis-ci.com/caycehouse/caycehouse.com)
+[![Travis (.com)](https://img.shields.io/travis/com/caycehouse/caycehouse.com.svg)](https://travis-ci.com/caycehouse/caycehouse.com)
 
 ## Running in development
 
