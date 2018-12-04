@@ -18,14 +18,3 @@ before_script:
 script:
   - npm run lint
   - npm run build
-
-jobs:
-  include:
-    - stage: deploy
-      deploy:
-        provider: pages
-        local-dir: public
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN
-        on:
-          branch: master
