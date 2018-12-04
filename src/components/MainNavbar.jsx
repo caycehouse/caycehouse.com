@@ -15,10 +15,10 @@ const GlobalStyle = createGlobalStyle`
     color: rgba(0, 0, 0, 0.6)
   }
 
-  .navbar-light .navbar-nav .active>.nav-link,
+  .navbar-light .navbar-nav .active > .nav-link,
   .navbar-light .navbar-nav .nav-link.active,
   .navbar-light .navbar-nav .nav-link.show,
-  .navbar-light .navbar-nav .show>.nav-link {
+  .navbar-light .navbar-nav .show > .nav-link {
     color: #525ddc;
   }
 `;
