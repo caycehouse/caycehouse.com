@@ -1,5 +1,4 @@
 import React from 'react';
-import Particles from 'react-particles-js';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
@@ -23,27 +22,6 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <React.Fragment>
-          <Particles
-            style={{ position: 'fixed', top: 0 }}
-            params={{
-              particles: {
-                number: {
-                  value: 50,
-                },
-                size: {
-                  value: 3,
-                },
-              },
-              interactivity: {
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: 'repulse',
-                  },
-                },
-              },
-            }}
-          />
           <div className="text-center mt-5">
             <Img
               alt="Cayce House"
@@ -60,6 +38,17 @@ export default class Index extends React.Component {
               <SocialIcons />
             </div>
           </div>
+          <Img
+            fluid={data.bgImg.childImageSharp.fluid}
+            style={{
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: -1,
+            }}
+          />
         </React.Fragment>
       </Layout>
     );
@@ -76,6 +65,13 @@ export const query = graphql`
       childImageSharp {
         fixed(width: 250, height: 250) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    bgImg: file(relativePath: { eq: "background.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
