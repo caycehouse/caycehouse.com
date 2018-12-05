@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import {
   Collapse,
   Nav,
@@ -10,9 +10,9 @@ import {
   NavbarToggler,
 } from 'reactstrap';
 
-const GlobalStyle = createGlobalStyle`
+const Container = styled.div`
   .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, 0.6)
+    color: rgba(0, 0, 0, 0.6);
   }
 
   .navbar-light .navbar-nav .active > .nav-link,
@@ -43,27 +43,28 @@ export default class MainNavbar extends React.Component {
   render() {
     const { isOpen } = this.state;
     return (
-      <Navbar color="light" light expand="md" style={{ zIndex: 999 }}>
-        <NavbarBrand href="/" className="d-md-none">
-          caycehouse.com
-        </NavbarBrand>
-        <NavbarToggler onClick={this.toggle} aria-label="Toggle navigation" />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mx-auto" navbar>
-            <NavItem>
-              <Link to="/" className="nav-link" activeClassName="active">
-                Home
-              </Link>
-            </NavItem>
-            <NavItem>
-              <Link to="/blog" className="nav-link" activeClassName="active">
-                Blog
-              </Link>
-            </NavItem>
-          </Nav>
-        </Collapse>
-        <GlobalStyle />
-      </Navbar>
+      <Container>
+        <Navbar color="light" light expand="md" style={{ zIndex: 999 }}>
+          <NavbarBrand href="/" className="d-md-none">
+            caycehouse.com
+          </NavbarBrand>
+          <NavbarToggler onClick={this.toggle} aria-label="Toggle navigation" />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mx-auto" navbar>
+              <NavItem>
+                <Link to="/" className="nav-link" activeClassName="active">
+                  Home
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link to="/blog" className="nav-link" activeClassName="active">
+                  Blog
+                </Link>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </Container>
     );
   }
 }
