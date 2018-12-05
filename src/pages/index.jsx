@@ -55,15 +55,15 @@ export const query = graphql`
   query {
     profileImg: file(relativePath: { eq: "profile-img.jpeg" }) {
       childImageSharp {
-        fixed(width: 250, height: 250) {
-          ...GatsbyImageSharpFixed
+        fixed(width: 250, height: 250, quality: 85) {
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
-    bgImg: file(relativePath: { eq: "background.jpg" }) {
+    bgImg: file(relativePath: { eq: "bg.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+        fluid(quality: 85) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
