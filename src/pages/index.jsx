@@ -2,20 +2,18 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 import SocialIcons from '../components/SocialIcons';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    color: #ffffff;
-  }
+const Container = styled.div`
+  color: #ffffff;
 `;
 
 const Index = ({ data }) => (
   <Layout>
-    <React.Fragment>
+    <Container>
       <div className="text-center mt-5">
         <Img
           alt="Cayce House"
@@ -43,8 +41,7 @@ const Index = ({ data }) => (
           zIndex: -1,
         }}
       />
-      <GlobalStyle />
-    </React.Fragment>
+    </Container>
   </Layout>
 );
 
