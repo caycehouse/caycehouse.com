@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Cayce House`,
     description: `Web & App Developer`,
+    siteUrl: `https://caycehouse.com`,
   },
   plugins: [
     {
@@ -44,5 +45,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-eslint`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
   ],
 };
