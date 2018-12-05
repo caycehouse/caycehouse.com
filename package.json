@@ -2,6 +2,10 @@
   "name": "caycehouse.com",
   "description": "My personal website and blog powered by Gatsby",
   "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caycehouse/caycehouse.com.git"
+  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
