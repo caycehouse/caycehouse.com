@@ -32,6 +32,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: `./src/images/profile-img.jpeg`,
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
