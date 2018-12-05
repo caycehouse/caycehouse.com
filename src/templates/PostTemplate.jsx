@@ -15,7 +15,7 @@ const PostTemplate = ({ data }) => {
         <h2 className="h5 text-muted">{fields.date}</h2>
         {/* Disable no-danger as we are providing HTML safe content */}
         {/* eslint-disable react/no-danger */}
-        <p dangerouslySetInnerHTML={{ __html: html }} />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
   );
