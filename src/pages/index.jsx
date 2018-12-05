@@ -53,7 +53,7 @@ export default Index;
 
 export const query = graphql`
   query {
-    profileImg: file(relativePath: { eq: "profile-img.jpeg" }) {
+    profileImg: file(relativePath: { eq: "icon.jpeg" }) {
       childImageSharp {
         fixed(width: 250, height: 250, quality: 85) {
           ...GatsbyImageSharpFixed_withWebp

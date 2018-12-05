@@ -36,7 +36,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: `./src/images/profile-img.jpeg`,
+        logo: `./src/images/icon.jpeg`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Cayce House`,
+        short_name: `Cayce House`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.jpeg`,
       },
     },
     `gatsby-plugin-styled-components`,
@@ -46,5 +58,6 @@ module.exports = {
     `gatsby-plugin-eslint`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-offline`,
   ],
 };
