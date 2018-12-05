@@ -1,7 +1,7 @@
 {
   "name": "caycehouse.com",
   "description": "My personal website and blog powered by Gatsby",
-  "license": "MIT",
+  "license": "GPL-3.0",
   "scripts": {
     "develop": "gatsby develop",
     "start": "npm run develop",
