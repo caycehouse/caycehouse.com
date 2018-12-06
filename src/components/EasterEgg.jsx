@@ -4,6 +4,23 @@ import Konami from 'react-konami-code';
 
 const EasterEgg = () => (
   <React.Fragment>
+    <a
+      href="https://youtube.com/pewdiepie"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        backgroundColor: '#000000',
+        color: '#ffffff',
+        display: 'block',
+        fontSize: '18px',
+        height: '10vh',
+        paddingTop: '2.5vh',
+        textAlign: 'center',
+        width: '100vw',
+      }}
+    >
+      Subscribe to PewDiePie on YouTube
+    </a>
     <iframe
       title="Subscribe to PewDiePie"
       id="pewdiepie"
@@ -12,27 +29,10 @@ const EasterEgg = () => (
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
       style={{
-        height: '100vh',
+        height: '90vh',
         width: '100vw',
-        zIndex: -1,
       }}
     />
-    <a
-      href="https://youtube.com/pewdiepie"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="display-3"
-      style={{
-        top: '25px',
-        color: '#ffffff',
-        left: 0,
-        position: 'fixed',
-        right: 0,
-        textAlign: 'center',
-      }}
-    >
-      Subscribe to PewDiePie on YouTube
-    </a>
   </React.Fragment>
 );
 
