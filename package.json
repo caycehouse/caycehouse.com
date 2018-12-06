@@ -37,6 +37,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-helmet": "^5.2.0",
+    "react-konami-code": "^1.2.3",
     "reactstrap": "^6.5.0",
     "styled-components": "^4.1.2"
   },
