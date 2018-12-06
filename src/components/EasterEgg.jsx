@@ -21,10 +21,10 @@ const EasterEgg = () => (
       href="https://youtube.com/pewdiepie"
       target="_blank"
       rel="noopener noreferrer"
+      className="display-3"
       style={{
         top: '25px',
         color: '#ffffff',
-        fontSize: '4rem',
         left: 0,
         position: 'fixed',
         right: 0,
