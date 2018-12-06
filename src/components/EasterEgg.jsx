@@ -24,7 +24,7 @@ const EasterEgg = () => (
     <iframe
       title="Subscribe to PewDiePie"
       id="pewdiepie"
-      src="https://www.youtube.com/embed/6Dh-RL__uN4?autoplay=1&cc_lang_pref=en&cc_load_policy=1&controls=0&disablekb=1&fs=0&loop=1&modestbranding=1&playlist=6Dh-RL__uN4&rel=0"
+      src="https://www.youtube.com/embed/6Dh-RL__uN4?autoplay=1&cc_lang_pref=en&cc_load_policy=1&controls=0&disablekb=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&playlist=6Dh-RL__uN4&rel=0"
       frameBorder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
