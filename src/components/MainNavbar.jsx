@@ -1,70 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import styled from 'styled-components';
-import {
-  Collapse,
-  Nav,
-  NavItem,
-  Navbar,
-  NavbarBrand,
-  NavbarToggler,
-} from 'reactstrap';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import Toolbar from '@material-ui/core/Toolbar';
+import { withStyles } from '@material-ui/core/styles';
 
-const Container = styled.div`
-  .navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, 0.6);
-  }
+const styles = {
+  justifyContent: {
+    justifyContent: 'center',
+  },
+};
 
-  .navbar-light .navbar-nav .active > .nav-link,
-  .navbar-light .navbar-nav .nav-link.active,
-  .navbar-light .navbar-nav .nav-link.show,
-  .navbar-light .navbar-nav .show > .nav-link {
-    color: #525ddc;
-  }
-`;
+const MainNavbar = props => {
+  const { classes } = props;
+  return (
+    <AppBar position="static">
+      <Toolbar className={classes.justifyContent}>
+        <Button component={Link} to="/">
+          Home
+        </Button>
+        <Button component={Link} to="/blog">
+          Blog
+        </Button>
+      </Toolbar>
+    </AppBar>
+  );
+};
 
-export default class MainNavbar extends React.Component {
-  constructor(props) {
-    super(props);
+MainNavbar.propTypes = {
+  classes: PropTypes.shape({
+    justifyContent: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false,
-    };
-  }
-
-  toggle() {
-    const { isOpen } = this.state;
-    this.setState({
-      isOpen: !isOpen,
-    });
-  }
-
-  render() {
-    const { isOpen } = this.state;
-    return (
-      <Container>
-        <Navbar color="light" light expand="md" style={{ zIndex: 999 }}>
-          <NavbarBrand href="/" className="d-md-none">
-            caycehouse.com
-          </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} aria-label="Toggle navigation" />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mx-auto" navbar>
-              <NavItem>
-                <Link to="/" className="nav-link" activeClassName="active">
-                  Home
-                </Link>
-              </NavItem>
-              <NavItem>
-                <Link to="/blog" className="nav-link" activeClassName="active">
-                  Blog
-                </Link>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </Container>
-    );
-  }
-}
+export default withStyles(styles)(MainNavbar);

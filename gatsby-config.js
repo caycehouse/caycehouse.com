@@ -51,6 +51,19 @@ module.exports = {
         trackingId: `UA-130590416-1`,
       },
     },
+    {
+      resolve: `@wapps/gatsby-plugin-material-ui`,
+      options: {
+        theme: {
+          palette: {
+            type: 'dark',
+          },
+          typography: {
+            useNextVariants: true,
+          },
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
