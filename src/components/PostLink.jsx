@@ -29,7 +29,7 @@ const PostLink = props => {
       <CardActions>
         <Button
           size="small"
-          color="primary"
+          color="secondary"
           component={Link}
           to={post.fields.slug}
         >
