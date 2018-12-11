@@ -4,7 +4,6 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 
 export default class Clock extends React.Component {
   constructor(props) {
@@ -60,7 +59,6 @@ export default class Clock extends React.Component {
           </p>
           <p className="display-4 text-right">{date}</p>
         </div>
-        <Footer />
       </div>
     );
   }
