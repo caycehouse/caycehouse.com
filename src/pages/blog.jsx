@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import { graphql } from 'gatsby';
 import PostLink from '../components/PostLink';
 
 import Layout from '../components/Layout';
 
+const styles = {
+  container: {
+    margin: '0 auto',
+    maxWidth: '768px',
+  },
+};
+
 const Blog = ({
   data: {
     allMarkdownRemark: { edges },
   },
+  classes,
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.fields.date) // You can filter your posts based on some criteria
@@ -16,8 +26,10 @@ const Blog = ({
 
   return (
     <Layout>
-      <div className="container" style={{ maxWidth: '768px' }}>
-        <h1 className="display-4 text-center">Cayce&apos;s Blog</h1>
+      <div className={classes.container}>
+        <Typography variant="h1" color="secondary" align="center" gutterBottom>
+          Cayce&apos;s Blog
+        </Typography>
         {Posts}
       </div>
     </Layout>
@@ -25,10 +37,13 @@ const Blog = ({
 };
 
 Blog.propTypes = {
+  classes: PropTypes.shape({
+    container: PropTypes.string.isRequired,
+  }).isRequired,
   data: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-export default Blog;
+export default withStyles(styles)(Blog);
 
 export const pageQuery = graphql`
   query {
