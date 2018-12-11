@@ -2,54 +2,59 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 import Layout from '../components/Layout';
 import SocialIcons from '../components/SocialIcons';
 
-const Container = styled.div`
-  color: #ffffff;
-`;
+const styles = {
+  background: {
+    height: '100%',
+    left: 0,
+    position: 'absolute !important',
+    top: 0,
+    width: '100%',
+    zIndex: -1,
+  },
+  container: {
+    marginTop: '50px',
+  },
+};
 
-const Index = ({ data }) => (
+const Index = ({ data, classes }) => (
   <Layout>
-    <Container>
-      <div className="text-center mt-5">
-        <Img
-          alt="Cayce House"
-          fixed={data.profileImg.childImageSharp.fixed}
-          className="img-responsive rounded-circle"
-          style={{
-            zIndex: 999,
-            position: 'relative',
-          }}
-        />
-        <h1 className="display-2 mt-2">Cayce House</h1>
-        <h2>Web & App Developer</h2>
-        <div className="mt-5">
-          <SocialIcons />
-        </div>
-      </div>
+    <div align="center" className={classes.container}>
+      <Avatar
+        alt="Cayce House"
+        component={Img}
+        fixed={data.profileImg.childImageSharp.fixed}
+      />
+      <Typography variant="h1" gutterBottom>
+        Cayce House
+      </Typography>
+      <Typography component="h2" variant="h3" gutterBottom>
+        Web & App Developer
+      </Typography>
+      <SocialIcons />
       <Img
         fluid={data.bgImg.childImageSharp.fluid}
-        style={{
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          width: '100%',
-          height: '100%',
-          zIndex: -1,
-        }}
+        className={classes.background}
       />
-    </Container>
+    </div>
   </Layout>
 );
 
 Index.propTypes = {
+  classes: PropTypes.shape({
+    background: PropTypes.string.isRequired,
+    container: PropTypes.string.isRequired,
+  }).isRequired,
   data: PropTypes.shape({ profileImg: PropTypes.object }).isRequired,
 };
 
-export default Index;
+export default withStyles(styles)(Index);
 
 export const query = graphql`
   query {
