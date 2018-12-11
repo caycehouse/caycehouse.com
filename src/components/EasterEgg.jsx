@@ -38,7 +38,7 @@ const EasterEgg = () => (
 
 class EasterEggLoader extends React.Component {
   easterEgg = () => {
-    document.body.style = 'overflow: hidden';
+    document.body.style = 'overflow: hidden;margin: 0;';
     ReactDOM.render(<EasterEgg />, document.getElementById('___gatsby'));
   };
 
