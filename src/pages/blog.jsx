@@ -11,6 +11,7 @@ const styles = {
   container: {
     margin: '0 auto',
     maxWidth: '768px',
+    padding: '20px',
   },
 };
 
@@ -27,7 +28,13 @@ const Blog = ({
   return (
     <Layout>
       <div className={classes.container}>
-        <Typography variant="h1" color="secondary" align="center" gutterBottom>
+        <Typography
+          component="h1"
+          variant="h2"
+          color="secondary"
+          align="center"
+          gutterBottom
+        >
           Cayce&apos;s Blog
         </Typography>
         {Posts}
