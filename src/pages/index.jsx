@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import PropTypes from 'prop-types';
-import Avatar from '@material-ui/core/Avatar';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import PostLink from '../components/PostLink';
 
 import Layout from '../components/Layout';
 import SocialIcons from '../components/SocialIcons';
@@ -19,49 +19,71 @@ const styles = {
     zIndex: -1,
   },
   container: {
-    marginTop: '50px',
+    margin: '0 auto',
+    maxWidth: '768px',
+    padding: '20px',
+  },
+  iconContainer: {
+    padding: '25px',
   },
 };
 
-const Index = ({ data, classes }) => (
-  <Layout>
-    <div align="center" className={classes.container}>
-      <Avatar
-        alt="Cayce House"
-        component={Img}
-        fixed={data.profileImg.childImageSharp.fixed}
-      />
-      <Typography variant="h1" gutterBottom>
-        Cayce House
-      </Typography>
-      <Typography component="h2" variant="h3" gutterBottom>
-        Web & App Developer
-      </Typography>
-      <SocialIcons />
+const Blog = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+  classes,
+  data,
+}) => {
+  const Posts = edges
+    .filter(edge => !!edge.node.fields.date) // You can filter your posts based on some criteria
+    .map(edge => <PostLink key={edge.node.fields.slug} post={edge.node} />);
+
+  return (
+    <Layout>
+      <div className={classes.container}>
+        <Typography component="h1" variant="h2" align="center" gutterBottom>
+          Cayce House
+        </Typography>
+        <div align="center" className={classes.iconContainer}>
+          <SocialIcons />
+        </div>
+        {Posts}
+      </div>
       <Img
         fluid={data.bgImg.childImageSharp.fluid}
         className={classes.background}
       />
-    </div>
-  </Layout>
-);
-
-Index.propTypes = {
-  classes: PropTypes.shape({
-    background: PropTypes.string.isRequired,
-    container: PropTypes.string.isRequired,
-  }).isRequired,
-  data: PropTypes.shape({ profileImg: PropTypes.object }).isRequired,
+    </Layout>
+  );
 };
 
-export default withStyles(styles)(Index);
+Blog.propTypes = {
+  classes: PropTypes.shape({
+    container: PropTypes.string.isRequired,
+  }).isRequired,
+  data: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
-export const query = graphql`
+export default withStyles(styles)(Blog);
+
+export const pageQuery = graphql`
   query {
-    profileImg: file(relativePath: { eq: "icon.jpeg" }) {
-      childImageSharp {
-        fixed(width: 250, height: 250, quality: 85) {
-          ...GatsbyImageSharpFixed_withWebp
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            date(formatString: "MMMM DD, YYYY")
+            slug
+            title
+          }
         }
       }
     }

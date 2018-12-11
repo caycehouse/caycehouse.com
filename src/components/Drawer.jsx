@@ -16,7 +16,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faRss } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
 
 const drawerWidth = 240;
 
@@ -94,12 +94,6 @@ class MainNavbar extends React.Component {
               <FontAwesomeIcon icon={faHome} />
             </ListItemIcon>
             <ListItemText primary="Home" />
-          </ListItem>
-          <ListItem button component={Link} to="/blog">
-            <ListItemIcon>
-              <FontAwesomeIcon icon={faRss} />
-            </ListItemIcon>
-            <ListItemText primary="Blog" />
           </ListItem>
           <ListItem button>
             <ListItemText

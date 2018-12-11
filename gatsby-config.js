@@ -55,9 +55,6 @@ module.exports = {
       resolve: `@wapps/gatsby-plugin-material-ui`,
       options: {
         theme: {
-          palette: {
-            type: 'dark',
-          },
           typography: {
             // Use the system font instead of the default Roboto font.
             fontFamily: [
