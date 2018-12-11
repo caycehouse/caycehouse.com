@@ -7,13 +7,19 @@ import EasterEgg from './EasterEgg';
 import Footer from './Footer';
 
 const Layout = ({ children }) => (
-  <React.Fragment>
+  <div
+    style={{
+      display: 'flex',
+      minHeight: '100vh',
+      flexDirection: 'column',
+    }}
+  >
     <EasterEgg />
     <Header />
     <MainNavbar />
-    <div className="mt-3">{children}</div>
+    <main style={{ flexGrow: 1 }}>{children}</main>
     <Footer />
-  </React.Fragment>
+  </div>
 );
 
 Layout.propTypes = {
