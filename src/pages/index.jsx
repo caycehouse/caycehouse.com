@@ -21,7 +21,7 @@ const styles = {
   container: {
     margin: '0 auto',
     maxWidth: '768px',
-    padding: '20px',
+    padding: '50px 15px',
   },
   iconContainer: {
     padding: '25px',
@@ -43,7 +43,7 @@ const Blog = ({
     <Layout>
       <div className={classes.container}>
         <Typography component="h1" variant="h2" align="center" gutterBottom>
-          Cayce House
+          Cayce&apos;s Blog
         </Typography>
         <div align="center" className={classes.iconContainer}>
           <SocialIcons />
