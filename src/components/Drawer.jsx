@@ -35,6 +35,11 @@ const styles = theme => ({
       width: `calc(100% - ${drawerWidth}px)`,
     },
   },
+  footer: {
+    bottom: 0,
+    position: 'fixed',
+    width: '100%',
+  },
   menuButton: {
     marginRight: 20,
     [theme.breakpoints.up('sm')]: {
@@ -100,6 +105,8 @@ class MainNavbar extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
+        </List>
+        <List className={classes.footer}>
           <ListItem button>
             <ListItemText
               primary={`© ${new Date().getFullYear()} Cayce House`}
