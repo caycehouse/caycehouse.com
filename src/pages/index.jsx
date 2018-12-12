@@ -7,7 +7,6 @@ import Img from 'gatsby-image';
 import PostLink from '../components/PostLink';
 
 import Layout from '../components/Layout';
-import SocialIcons from '../components/SocialIcons';
 
 const styles = {
   background: {
@@ -45,9 +44,6 @@ const Blog = ({
         <Typography component="h1" variant="h2" align="center" gutterBottom>
           Cayce&apos;s Blog
         </Typography>
-        <div align="center" className={classes.iconContainer}>
-          <SocialIcons />
-        </div>
         {Posts}
       </div>
       <Img

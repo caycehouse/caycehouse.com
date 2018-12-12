@@ -18,6 +18,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
 
+import SocialIcons from './SocialIcons';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -85,6 +87,9 @@ class MainNavbar extends React.Component {
               />
             </ListItemIcon>
             <ListItemText primary="Cayce House" />
+          </ListItem>
+          <ListItem>
+            <SocialIcons />
           </ListItem>
         </List>
         <Divider />
