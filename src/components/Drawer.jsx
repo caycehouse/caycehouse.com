@@ -16,7 +16,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faHome,
+  faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons';
 
 import SocialIcons from './SocialIcons';
 
@@ -104,6 +108,12 @@ class MainNavbar extends React.Component {
               <FontAwesomeIcon icon={faHome} />
             </ListItemIcon>
             <ListItemText primary="Home" />
+          </ListItem>
+          <ListItem button component={Link} to="/contact">
+            <ListItemIcon>
+              <FontAwesomeIcon icon={faPaperPlane} />
+            </ListItemIcon>
+            <ListItemText primary="Contact" />
           </ListItem>
         </List>
         <List className={classes.footer} component="nav">
