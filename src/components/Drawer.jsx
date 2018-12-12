@@ -37,7 +37,7 @@ const styles = theme => ({
   },
   footer: {
     bottom: 0,
-    position: 'fixed',
+    position: 'absolute',
     width: '100%',
   },
   menuButton: {
