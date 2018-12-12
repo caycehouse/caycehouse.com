@@ -67,7 +67,7 @@ class MainNavbar extends React.Component {
     const drawer = (
       <div>
         <Divider />
-        <List>
+        <List component="nav">
           <ListItem button component={Link} to="/">
             <ListItemIcon>
               <StaticQuery
@@ -93,12 +93,12 @@ class MainNavbar extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Cayce House" />
           </ListItem>
-          <ListItem>
+          <ListItem component="div">
             <SocialIcons />
           </ListItem>
         </List>
         <Divider />
-        <List>
+        <List component="nav">
           <ListItem button component={Link} to="/">
             <ListItemIcon>
               <FontAwesomeIcon icon={faHome} />
@@ -106,7 +106,7 @@ class MainNavbar extends React.Component {
             <ListItemText primary="Home" />
           </ListItem>
         </List>
-        <List className={classes.footer}>
+        <List className={classes.footer} component="nav">
           <ListItem button>
             <ListItemText
               primary={`© ${new Date().getFullYear()} Cayce House`}
