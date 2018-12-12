@@ -27,12 +27,7 @@ const PostLink = props => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button
-          size="small"
-          color="secondary"
-          component={Link}
-          to={post.fields.slug}
-        >
+        <Button color="primary" component={Link} to={post.fields.slug}>
           Read More
         </Button>
       </CardActions>
