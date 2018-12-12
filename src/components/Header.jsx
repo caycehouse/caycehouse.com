@@ -20,11 +20,6 @@ export default () => (
           <html lang="en" />
           <title>{`${seo.title} | ${seo.description}`}</title>
           <meta name="description" content={seo.description} />
-          <noscript>
-            <h1>
-              You need JavaScript enabled in your browser to use this site.
-            </h1>
-          </noscript>
         </Helmet>
       </React.Fragment>
     )}
