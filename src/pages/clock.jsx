@@ -2,10 +2,19 @@ import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
 import Header from '../components/Header';
 
-export default class Clock extends React.Component {
+const styles = {
+  header: {
+    color: '#2d499d',
+  },
+};
+
+class Clock extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,42 +40,50 @@ export default class Clock extends React.Component {
 
   render() {
     const { time, date } = this.state;
-    const { data } = this.props;
+    const { classes, data } = this.props;
     return (
-      <div>
+      <React.Fragment>
         <Header />
-        <div className="container">
-          <Img
-            alt="Conley Viking Logo"
-            fixed={data.vikingHeadImg.childImageSharp.fixed}
-            style={{
-              position: 'absolute',
-              top: '25px',
-              right: '25px',
-            }}
-          />
-          <h1
-            className="display-1"
-            style={{ color: '#2d499d', fontSize: '10rem' }}
-          >
-            Conley Time:
-          </h1>
-          <p
-            className="display-1 text-center p-5"
-            style={{ fontSize: '20rem' }}
-          >
-            {time}
-          </p>
-          <p className="display-4 text-right">{date}</p>
-        </div>
-      </div>
+        <Grid container align="center">
+          <Grid item xs={8}>
+            <Typography className={classes.header} variant="h1">
+              Conley Time:
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <Img
+              alt="Conley Viking Logo"
+              fixed={data.vikingHeadImg.childImageSharp.fixed}
+              style={{
+                position: 'absolute',
+                top: '25px',
+                right: '25px',
+              }}
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography component="h2" variant="h1">
+              {time}
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography component="h2" variant="h3">
+              {date}
+            </Typography>
+          </Grid>
+        </Grid>
+      </React.Fragment>
     );
   }
 }
 
 Clock.propTypes = {
+  /* eslint-disable react/forbid-prop-types */
+  classes: PropTypes.object.isRequired,
   data: PropTypes.shape({ vikingHeadImg: PropTypes.object }).isRequired,
 };
+
+export default withStyles(styles)(Clock);
 
 export const query = graphql`
   query {
