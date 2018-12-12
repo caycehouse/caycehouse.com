@@ -116,6 +116,7 @@ class MainNavbar extends React.Component {
             button
             component="a"
             href="https://sumojoe.com"
+            rel="noopener noreferrer"
             target="_blank"
           >
             <ListItemText primary="Powered by SUMOjoe" />
