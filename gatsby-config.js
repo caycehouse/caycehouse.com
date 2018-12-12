@@ -80,5 +80,6 @@ module.exports = {
     `gatsby-plugin-eslint`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
   ],
 };
