@@ -2,8 +2,6 @@ import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 
-import '../styles/main.scss';
-
 export default () => (
   <StaticQuery
     query={graphql`
