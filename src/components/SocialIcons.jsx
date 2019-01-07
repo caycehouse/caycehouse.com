@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebookF,
-  faTwitter,
   faInstagram,
   faGithub,
 } from '@fortawesome/free-brands-svg-icons';
@@ -11,7 +10,7 @@ import {
 export default () => (
   <React.Fragment>
     <Grid container>
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <a
           href="https://facebook.com/caycehouse"
           target="_blank"
@@ -25,21 +24,7 @@ export default () => (
           />
         </a>
       </Grid>
-      <Grid item xs={3}>
-        <a
-          href="https://twitter.com/caycehouse"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Cayce's Twitter"
-        >
-          <FontAwesomeIcon
-            icon={faTwitter}
-            className="fa-fw fa-2x"
-            color="#00aced"
-          />
-        </a>
-      </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <a
           href="https://instagram.com/caycehouse"
           target="_blank"
@@ -53,7 +38,7 @@ export default () => (
           />
         </a>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={4}>
         <a
           href="https://github.com/caycehouse"
           target="_blank"
