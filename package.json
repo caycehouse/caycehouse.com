@@ -21,6 +21,7 @@
     "@material-ui/core": "^3.9.2",
     "@wapps/gatsby-plugin-material-ui": "^1.2.0",
     "bluebird": "^3.5.3",
+    "core-js": "^2.6.3",
     "gatsby": "^2.0.115",
     "gatsby-image": "^2.0.29",
     "gatsby-link": "^2.0.10",
