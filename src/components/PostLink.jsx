@@ -10,13 +10,13 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
+const styles = (theme) => ({
   post: {
     backgroundColor: theme.palette.background.paper,
   },
 });
 
-const PostLink = props => {
+const PostLink = (props) => {
   const { classes, post } = props;
   return (
     <Card className={classes.post}>

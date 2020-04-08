@@ -35,8 +35,8 @@ const Blog = ({
   data,
 }) => {
   const Posts = edges
-    .filter(edge => !!edge.node.fields.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.fields.slug} post={edge.node} />);
+    .filter((edge) => !!edge.node.fields.date) // You can filter your posts based on some criteria
+    .map((edge) => <PostLink key={edge.node.fields.slug} post={edge.node} />);
 
   return (
     <Layout>
@@ -57,6 +57,7 @@ const Blog = ({
 Blog.propTypes = {
   classes: PropTypes.shape({
     container: PropTypes.string.isRequired,
+    background: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.objectOf(PropTypes.object).isRequired,
 };

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Konami from 'react-konami-code';
 
 const EasterEgg = () => (
-  <React.Fragment>
+  <>
     <a
       href="https://youtube.com/pewdiepie"
       target="_blank"
@@ -33,7 +33,7 @@ const EasterEgg = () => (
         width: '100vw',
       }}
     />
-  </React.Fragment>
+  </>
 );
 
 class EasterEggLoader extends React.Component {

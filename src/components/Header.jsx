@@ -15,13 +15,13 @@ export default () => (
       }
     `}
     render={({ site: { siteMetadata: seo } }) => (
-      <React.Fragment>
+      <>
         <Helmet>
           <html lang="en" />
           <title>{`${seo.title} | ${seo.description}`}</title>
           <meta name="description" content={seo.description} />
         </Helmet>
-      </React.Fragment>
+      </>
     )}
   />
 );

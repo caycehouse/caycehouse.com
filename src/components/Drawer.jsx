@@ -26,7 +26,7 @@ import SocialIcons from './SocialIcons';
 
 const drawerWidth = 240;
 
-const styles = theme => ({
+const styles = (theme) => ({
   drawer: {
     [theme.breakpoints.up('sm')]: {
       width: drawerWidth,
@@ -56,12 +56,15 @@ const styles = theme => ({
 });
 
 class MainNavbar extends React.Component {
-  state = {
-    mobileOpen: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobileOpen: false,
+    };
+  }
 
   handleDrawerToggle = () => {
-    this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+    this.setState((state) => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {
@@ -136,7 +139,7 @@ class MainNavbar extends React.Component {
     );
 
     return (
-      <React.Fragment>
+      <>
         <Hidden smUp implementation="css">
           <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
@@ -180,7 +183,7 @@ class MainNavbar extends React.Component {
             </Drawer>
           </Hidden>
         </nav>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -42,7 +42,7 @@ class Clock extends React.Component {
     const { time, date } = this.state;
     const { classes, data } = this.props;
     return (
-      <React.Fragment>
+      <>
         <Header />
         <Grid container align="center">
           <Grid item xs={8}>
@@ -72,7 +72,7 @@ class Clock extends React.Component {
             </Typography>
           </Grid>
         </Grid>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 export default () => (
-  <React.Fragment>
+  <>
     <Grid container>
       <Grid item xs={4}>
         <a
@@ -53,5 +53,5 @@ export default () => (
         </a>
       </Grid>
     </Grid>
-  </React.Fragment>
+  </>
 );

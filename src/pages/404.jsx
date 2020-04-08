@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Header from '../components/Header';
 
 export default () => (
-  <React.Fragment>
+  <>
     <Header />
     <div align="center">
       <Typography variant="h1" color="primary" gutterBottom>
@@ -22,5 +22,5 @@ export default () => (
         Go Back
       </Button>
     </div>
-  </React.Fragment>
+  </>
 );
