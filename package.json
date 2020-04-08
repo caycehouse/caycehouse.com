@@ -19,7 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@material-ui/core": "^3.9.4",
-    "@wapps/gatsby-plugin-material-ui": "^1.2.0",
+    "@wapps/gatsby-plugin-material-ui": "^1.2.1",
     "bluebird": "^3.5.3",
     "core-js": "^2.6.3",
     "gatsby": "^2.0.115",
