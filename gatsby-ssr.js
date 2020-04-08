@@ -1,10 +1,7 @@
-const React = require('react');
+/**
+ * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ */
 
-exports.onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents([
-    /* eslint-disable react/jsx-filename-extension */
-    <noscript key="noscript">
-      Your browser does not support JavaScript!
-    </noscript>,
-  ]);
-};
+// You can delete this file if you're not using it
