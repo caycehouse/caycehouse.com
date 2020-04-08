@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         `,
-      ).then(result => {
+      ).then((result) => {
         if (result.errors) {
           reject(result.errors);
         }
@@ -81,7 +81,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: `${title
         .replace(/-/g, ' ')
-        .replace(/\b\w/g, w => w.toUpperCase())}`,
+        .replace(/\b\w/g, (w) => w.toUpperCase())}`,
     });
   }
 };

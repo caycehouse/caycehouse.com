@@ -16,11 +16,17 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBars,
+  faHome,
+  faPaperPlane,
+} from '@fortawesome/free-solid-svg-icons';
+
+import SocialIcons from './SocialIcons';
 
 const drawerWidth = 240;
 
-const styles = theme => ({
+const styles = (theme) => ({
   drawer: {
     [theme.breakpoints.up('sm')]: {
       width: drawerWidth,
@@ -32,6 +38,11 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
     },
+  },
+  footer: {
+    bottom: 0,
+    position: 'absolute',
+    width: '100%',
   },
   menuButton: {
     marginRight: 20,
@@ -45,12 +56,15 @@ const styles = theme => ({
 });
 
 class MainNavbar extends React.Component {
-  state = {
-    mobileOpen: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      mobileOpen: false,
+    };
+  }
 
   handleDrawerToggle = () => {
-    this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+    this.setState((state) => ({ mobileOpen: !state.mobileOpen }));
   };
 
   render() {
@@ -60,7 +74,7 @@ class MainNavbar extends React.Component {
     const drawer = (
       <div>
         <Divider />
-        <List>
+        <List component="nav">
           <ListItem button component={Link} to="/">
             <ListItemIcon>
               <StaticQuery
@@ -86,15 +100,26 @@ class MainNavbar extends React.Component {
             </ListItemIcon>
             <ListItemText primary="Cayce House" />
           </ListItem>
+          <ListItem component="div">
+            <SocialIcons />
+          </ListItem>
         </List>
         <Divider />
-        <List>
+        <List component="nav">
           <ListItem button component={Link} to="/">
             <ListItemIcon>
               <FontAwesomeIcon icon={faHome} />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
+          <ListItem button component={Link} to="/contact">
+            <ListItemIcon>
+              <FontAwesomeIcon icon={faPaperPlane} />
+            </ListItemIcon>
+            <ListItemText primary="Contact" />
+          </ListItem>
+        </List>
+        <List className={classes.footer} component="nav">
           <ListItem button>
             <ListItemText
               primary={`© ${new Date().getFullYear()} Cayce House`}
@@ -104,6 +129,7 @@ class MainNavbar extends React.Component {
             button
             component="a"
             href="https://sumojoe.com"
+            rel="noopener noreferrer"
             target="_blank"
           >
             <ListItemText primary="Powered by SUMOjoe" />
@@ -113,7 +139,7 @@ class MainNavbar extends React.Component {
     );
 
     return (
-      <React.Fragment>
+      <>
         <Hidden smUp implementation="css">
           <AppBar position="fixed" className={classes.appBar}>
             <Toolbar>
@@ -157,7 +183,7 @@ class MainNavbar extends React.Component {
             </Drawer>
           </Hidden>
         </nav>
-      </React.Fragment>
+      </>
     );
   }
 }

@@ -7,7 +7,6 @@ import Img from 'gatsby-image';
 import PostLink from '../components/PostLink';
 
 import Layout from '../components/Layout';
-import SocialIcons from '../components/SocialIcons';
 
 const styles = {
   background: {
@@ -21,7 +20,7 @@ const styles = {
   container: {
     margin: '0 auto',
     maxWidth: '768px',
-    padding: '20px',
+    padding: '50px 15px',
   },
   iconContainer: {
     padding: '25px',
@@ -36,18 +35,15 @@ const Blog = ({
   data,
 }) => {
   const Posts = edges
-    .filter(edge => !!edge.node.fields.date) // You can filter your posts based on some criteria
-    .map(edge => <PostLink key={edge.node.fields.slug} post={edge.node} />);
+    .filter((edge) => !!edge.node.fields.date) // You can filter your posts based on some criteria
+    .map((edge) => <PostLink key={edge.node.fields.slug} post={edge.node} />);
 
   return (
     <Layout>
       <div className={classes.container}>
         <Typography component="h1" variant="h2" align="center" gutterBottom>
-          Cayce House
+          Cayce&apos;s Blog
         </Typography>
-        <div align="center" className={classes.iconContainer}>
-          <SocialIcons />
-        </div>
         {Posts}
       </div>
       <Img
@@ -61,6 +57,7 @@ const Blog = ({
 Blog.propTypes = {
   classes: PropTypes.shape({
     container: PropTypes.string.isRequired,
+    background: PropTypes.string.isRequired,
   }).isRequired,
   data: PropTypes.objectOf(PropTypes.object).isRequired,
 };

@@ -6,7 +6,7 @@ import Header from './Header';
 import Drawer from './Drawer';
 import EasterEgg from './EasterEgg';
 
-const styles = theme => ({
+const styles = (theme) => ({
   root: {
     display: 'flex',
   },
@@ -17,14 +17,14 @@ const styles = theme => ({
 });
 
 const Layout = ({ children, classes }) => (
-  <React.Fragment>
+  <>
     <EasterEgg />
     <Header />
     <div className={classes.root}>
       <Drawer />
       <main className={classes.content}>{children}</main>
     </div>
-  </React.Fragment>
+  </>
 );
 
 Layout.propTypes = {
