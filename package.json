@@ -38,7 +38,7 @@
     "lodash": "^4.17.15",
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
-    "react-dom": "^16.7.0",
+    "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
     "react-konami-code": "^1.4.3"
   },
