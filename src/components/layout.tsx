@@ -1,16 +1,12 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import PropTypes from "prop-types"
 import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 
-const Layout = ({ children }) => {
+interface Props {
+  children?: any
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <>
       <Container className="text-center">{children}</Container>
@@ -21,10 +17,6 @@ const Layout = ({ children }) => {
       </Navbar>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
