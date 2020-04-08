@@ -16,6 +16,12 @@ interface Props {
   title: string
 }
 
+const defaultProps: Props = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
+
 function SEO({ description, lang, meta, title }: Props) {
   const { site } = useStaticQuery(
     graphql`
@@ -77,5 +83,7 @@ function SEO({ description, lang, meta, title }: Props) {
     />
   )
 }
+
+SEO.defaultProps = defaultProps
 
 export default SEO
