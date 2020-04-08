@@ -22,7 +22,7 @@
     "@wapps/gatsby-plugin-material-ui": "^1.2.1",
     "bluebird": "^3.7.2",
     "core-js": "^3.6.4",
-    "gatsby": "^2.0.115",
+    "gatsby": "^2.20.13",
     "gatsby-image": "^2.3.2",
     "gatsby-link": "^2.3.2",
     "gatsby-plugin-google-analytics": "^2.2.2",
