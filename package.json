@@ -40,7 +40,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.1",
-    "react-konami-code": "^1.4.0"
+    "react-konami-code": "^1.4.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
