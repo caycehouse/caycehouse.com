@@ -20,6 +20,7 @@ const defaultProps: Props = {
   lang: `en`,
   meta: [],
   description: ``,
+  title: ``,
 }
 
 function SEO({ description, lang, meta, title }: Props) {

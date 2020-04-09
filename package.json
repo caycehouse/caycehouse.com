@@ -60,5 +60,13 @@
   },
   "bugs": {
     "email": "cayce@caycehouse.com"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --cache --fix"
   }
 }
