@@ -7,7 +7,7 @@ const Feature = () => {
     query {
       placeholderImage: file(relativePath: { eq: "feature.jpg" }) {
         childImageSharp {
-          fixed(width: 300, height: 300) {
+          fixed(width: 150, height: 150) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -17,7 +17,7 @@ const Feature = () => {
 
   return (
     <Img
-      className="rounded-circle mt-5"
+      className="shadow-lg rounded-circle mt-5"
       fixed={data.placeholderImage.childImageSharp.fixed}
     />
   )
