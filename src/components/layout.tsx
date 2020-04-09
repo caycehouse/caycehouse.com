@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
 
 interface Props {
-  children?: any
+  children?: React.ReactNode
 }
 
 const Layout = ({ children }: Props) => {
