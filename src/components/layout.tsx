@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "react-bootstrap/Navbar"
 import Container from "react-bootstrap/Container"
+import EasterEgg from "./easter-egg"
 
 interface Props {
   children?: React.ReactNode
@@ -9,6 +10,7 @@ interface Props {
 const Layout = ({ children }: Props) => {
   return (
     <>
+      <EasterEgg />
       <Container className="text-center">{children}</Container>
       <Navbar fixed="bottom" expand="lg" bg="dark" id="footer">
         <Navbar.Brand className="my-0 mx-auto text-white">
