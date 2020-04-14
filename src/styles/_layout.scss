@@ -5,15 +5,15 @@ body {
 
 body {
   background-image: url(../images/background.gif);
-  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   color: #fff;
 }
 
 #___gatsby {
+  min-height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  height: 100%;
 }
 
 #footer {
