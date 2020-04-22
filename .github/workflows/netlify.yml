@@ -1,0 +1,26 @@
+name: Build and Deploy to Netlify
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize]
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install -g gatsby-cli
+      - run: gatsby build
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.0
+        with:
+          publish-dir: './public'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
