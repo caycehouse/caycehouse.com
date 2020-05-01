@@ -22,6 +22,7 @@ jobs:
         npm i	
         npm install -g gatsby-cli
         gatsby build
+        git reset --hard
       
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
