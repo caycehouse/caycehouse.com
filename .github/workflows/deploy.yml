@@ -32,4 +32,5 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "public/*"
         target: ${{ secrets.TARGET }}
+        strip_components: 1
         rm: true
