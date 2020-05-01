@@ -1,4 +1,7 @@
-on: push
+on:
+  push:
+    branches:
+      - master
 name: Build and Publish Front End Framework Website
 jobs:
   FTP-Deploy-Action:
