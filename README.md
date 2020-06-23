@@ -1,6 +1,6 @@
 # [caycehouse.com](https://caycehouse.com)
 
-My personal website and blog powered by Gatsby and host on Netlify.
+My personal website and blog powered by Gatsby.
 
 ## Status
 
