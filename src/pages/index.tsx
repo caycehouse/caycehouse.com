@@ -20,11 +20,6 @@ const IndexPage = () => (
     <Nav className="justify-content-center mt-5" activeKey="/home">
       <IconContext.Provider value={{ size: "4em" }}>
         <Nav.Item>
-          <Nav.Link href="https://www.facebook.com/caycehouse">
-            <FaFacebookF />
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
           <Nav.Link href="https://github.com/caycehouse">
             <FaGithub />
           </Nav.Link>
