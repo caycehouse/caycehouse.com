@@ -13,7 +13,7 @@ const run = () => {
 
   document.body.style.overflow = "hidden"
 
-  player.load("vPAgNf-xEbE", true)
+  player.load("uP8VpWlOjBc", true)
   player.setVolume(100)
 
   player.on("ended", () => {

@@ -1,26 +1,25 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Feature = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "feature.jpg" }) {
-        childImageSharp {
-          fixed(width: 150, height: 150) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  placeholderImage: file(relativePath: {eq: "feature.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 150, height: 150, layout: FIXED)
     }
-  `)
+  }
+}
+`)
 
   return (
-    <Img
-      className="shadow-lg rounded-circle mt-5"
-      fixed={data.placeholderImage.childImageSharp.fixed}
-    />
-  )
+    <div className="pt-5">
+      <GatsbyImage
+        image={data.placeholderImage.childImageSharp.gatsbyImageData}
+        className="shadow-lg rounded-circle mx-auto"
+        alt="Cayce House" />
+    </div>
+  );
 }
 
 export default Feature
