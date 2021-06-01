@@ -8,7 +8,7 @@
     "bootstrap": "^5.0.0",
     "gatsby": "^3.5.0",
     "gatsby-image": "^3.5.0",
-    "gatsby-plugin-image": "^1.5.0",
+    "gatsby-plugin-image": "^1.6.0",
     "gatsby-plugin-react-helmet": "^4.5.0",
     "gatsby-plugin-sass": "^4.5.0",
     "gatsby-plugin-sharp": "^3.5.0",
