@@ -33,3 +33,4 @@ jobs:
         source: "public/*"
         target: ${{ secrets.TARGET }}
         strip_components: 1
+        overwrite: true
