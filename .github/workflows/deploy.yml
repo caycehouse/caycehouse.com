@@ -1,36 +1,37 @@
+name: ci
+
 on:
   push:
     branches:
-      - master
-name: Build and Publish Front End Framework Website
+      - 'master'
+
 jobs:
-  deploy:
-    name: Deploy
+  docker:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-      with:
-        fetch-depth: 2
-
-    - name: Use Node.js 14
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14'
-        
-    - name: Build Project
-      run: |
-        npm i	
-        npm install -g gatsby-cli
-        gatsby build
-      
-    - name: copy file via ssh password
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        source: "public/*"
-        target: ${{ secrets.TARGET }}
-        strip_components: 1
-        overwrite: true
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      -
+        name: Login to GitHub Container Registry
+        uses: docker/login-action@v1 
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/caycehouse/caycehouse.com:latest
+            ghcr.io/caycehouse/caycehouse.com:1.0.0
