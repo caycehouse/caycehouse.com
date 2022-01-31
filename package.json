@@ -24,7 +24,7 @@
     "yt-player": "^3.5.0"
   },
   "devDependencies": {
-    "@types/node": "^16.7.1",
+    "@types/node": "^17.0.13",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/react-helmet": "^6.1.2",
