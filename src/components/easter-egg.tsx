@@ -6,14 +6,13 @@ const run = () => {
   const player = new YTPlayer("#___gatsby", {
     width: document.body.clientWidth,
     height: document.body.clientHeight,
-    // controls: false,
     keyboard: false,
     related: false,
   })
 
   document.body.style.overflow = "hidden"
 
-  player.load("uP8VpWlOjBc", true)
+  player.load("IwwSRnVul3E", true)
   player.setVolume(100)
 
   player.on("ended", () => {

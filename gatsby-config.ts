@@ -1,11 +1,15 @@
-module.exports = {
+import type { GatsbyConfig } from "gatsby"
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Cayce House`,
     description: `The personal site for Cayce House.`,
-    author: `Cayce House`,
+    twitterUsername: `@caycehouse`,
+    image: `/logo.png`,
+    siteUrl: `https://www.caycehouse.com`,
   },
+  trailingSlash: `never`,
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,8 +19,9 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],
 }
+
+export default config
