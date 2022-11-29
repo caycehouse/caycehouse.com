@@ -1,13 +1,22 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "target": "esnext",
-    "jsx": "preserve",
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noEmit": true,
-    "noUnusedLocals": false,
-    "esModuleInterop": true
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules", "public", ".cache"]
+  "include": [
+    "./src/**/*",
+    "./gatsby-node.ts",
+    "./gatsby-config.ts",
+    "./plugins/**/*"
+  ]
 }
