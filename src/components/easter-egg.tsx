@@ -12,7 +12,7 @@ const run = () => {
 
   document.body.style.overflow = "hidden"
 
-  player.load("IwwSRnVul3E", true)
+  player.load("aW7bzd8uwyQ", true)
   player.setVolume(100)
 
   player.on("ended", () => {
