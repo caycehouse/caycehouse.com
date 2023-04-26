@@ -10,7 +10,7 @@
     "gatsby-image": "^3.9.0",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-sass": "^6.2.0",
-    "gatsby-plugin-sharp": "^5.2.0",
+    "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-source-filesystem": "^5.2.0",
     "gatsby-transformer-sharp": "^5.2.0",
     "node-sass": "^8.0.0",
