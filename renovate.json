@@ -5,6 +5,7 @@
   ],
   "extends": [
     "config:base",
+    ":automergeMinor",
     ":rebaseStalePrs",
     "group:linters",
     "group:allNonMajor",
