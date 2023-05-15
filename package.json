@@ -22,7 +22,7 @@
     "yt-player": "3.6.1"
   },
   "devDependencies": {
-    "@types/node": "18.16.5",
+    "@types/node": "18.16.9",
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "@types/yt-player": "3.5.1",
