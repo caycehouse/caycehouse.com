@@ -22,10 +22,10 @@
     "yt-player": "3.6.1"
   },
   "devDependencies": {
-    "@types/node": "18.18.8",
-    "@types/react": "18.2.35",
-    "@types/react-dom": "18.2.14",
-    "@types/yt-player": "3.5.3",
+    "@types/node": "18.18.9",
+    "@types/react": "18.2.37",
+    "@types/react-dom": "18.2.15",
+    "@types/yt-player": "3.5.4",
     "typescript": "5.2.2"
   },
   "keywords": [
