@@ -3,25 +3,5 @@
   "extends": [
     "github>caycehouse/renovate-config",
     ":skipStatusChecks"
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": [
-        "gatsby"
-      ],
-      "matchPackagePrefixes": [
-        "gatsby-"
-      ],
-      "groupName": "Gatsby"
-    },
-    {
-      "matchPackageNames": [
-        "react"
-      ],
-      "matchPackagePrefixes": [
-        "react-"
-      ],
-      "groupName": "React"
-    }
   ]
 }
