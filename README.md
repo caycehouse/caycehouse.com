@@ -4,7 +4,7 @@ My personal website and blog powered by Gatsby.
 
 ## Status
 
-![Node.js CI](https://github.com/caycehouse/caycehouse.com/workflows/Node.js%20CI/badge.svg)
+[![CI](https://github.com/caycehouse/caycehouse.com/actions/workflows/ci.yml/badge.svg)](https://github.com/caycehouse/caycehouse.com/actions/workflows/ci.yml)
 
 ## Running in development
 
