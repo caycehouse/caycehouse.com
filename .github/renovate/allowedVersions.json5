@@ -1,0 +1,10 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchDatasources": ["node-version", "npm"],
+      "matchPackagePatterns": ["node", "@types/node"],
+      "allowedVersions": "18.x"
+    }
+  ]
+}
