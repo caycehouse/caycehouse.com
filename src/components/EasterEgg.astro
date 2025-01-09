@@ -1,0 +1,22 @@
+<script>
+  import YTPlayer from 'yt-player';
+  import KonamiCode from 'konami-code-js';
+
+  new KonamiCode(function () {
+    const player = new YTPlayer('#content', {
+      width: document.body.clientWidth,
+      height: document.body.clientHeight,
+      keyboard: false,
+      related: false,
+    });
+
+    document.body.style.overflow = 'hidden';
+
+    player.load('aW7bzd8uwyQ', true);
+    player.setVolume(100);
+
+    player.on('ended', () => {
+      player.play();
+    });
+  });
+</script>

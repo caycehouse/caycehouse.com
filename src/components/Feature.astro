@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import feature from '@assets/feature.jpg';
+---
+
+<div class="pt-5">
+  <Image
+    src={feature}
+    id="feature-image"
+    class="shadow-lg rounded-circle mx-auto"
+    layout="fixed"
+    width={150}
+    height={150}
+    quality={90}
+    alt="Cayce House" />
+</div>

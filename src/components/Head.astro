@@ -1,0 +1,29 @@
+---
+import { SEO } from "astro-seo";
+
+const { title, description } = Astro.props;
+---
+<SEO
+charset="utf-8"
+description={description ?? "The personal site for Cayce House."}
+title={title}
+titleDefault="Cayce House"
+extend={{
+  link: [
+    {
+      rel: "icon",
+      href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>",
+    },
+  ],
+  meta: [
+    {
+      name: 'generator',
+      content: Astro.generator,
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1, shrink-to-fit=no",
+    },
+  ],
+}}
+/>
