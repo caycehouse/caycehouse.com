@@ -9,6 +9,6 @@ export default defineConfig({
   integrations: [react()],
   site: 'https://caycehouse.com',
   vite: {
-    plugins: [nodePolyfills()]
+    plugins: [nodePolyfills() as any]
   }
 });
