@@ -1,6 +1,6 @@
 import { FaEnvelope, FaGithub } from "react-icons/fa"
 import { IconContext } from "react-icons"
-import Nav from "react-bootstrap/Nav"
+import { Nav } from "react-bootstrap"
 
 export default function SocialNav() {
   return (
