@@ -1,8 +1,7 @@
 ---
 import Head from "@components/Head.astro";
 import EasterEgg from "@components/EasterEgg.astro";
-import "@styles/style.scss";
-import { Container, Navbar } from "react-bootstrap";
+import "@styles/style.css";
 
 const { title, description } = Astro.props;
 ---
@@ -12,16 +11,16 @@ const { title, description } = Astro.props;
     <Head {title} {description} />
   </head>
   <body>
-    <div id="content">
+    <div class="bg-black/50 min-h-screen" id="content">
       <EasterEgg />
-      <Container className="text-center">
+      <div class="text-center container mx-auto px-4">
         <slot />
-      </Container>
-      <Navbar fixed="bottom" expand="lg" bg="dark" id="footer">
-        <Navbar.Brand className="my-0 mx-auto text-white">
+      </div>
+      <nav class="fixed bottom-0 left-0 z-20 w-full p-4 flex justify-center bg-black/50" id="footer">
+        <span class="text-xl">
           Copyright © {new Date().getFullYear()} Cayce House
-        </Navbar.Brand>
-      </Navbar>
+        </span>
+      </nav>
     </div>
   </body>
 </html>
