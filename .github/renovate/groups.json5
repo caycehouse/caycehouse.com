@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "description": ["Tailwind CSS Group"],
+      "groupName": "Tailwind CSS",
+      "matchPackagePatterns": ["tailwindcss", "@tailwindcss/vite"],
+      "matchDatasources": ["npm"],
+      "group": {
+        "commitMessageTopic": "{{{groupName}}} group"
+      }
+    }
+  ]
+}
