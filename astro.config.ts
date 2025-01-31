@@ -10,7 +10,9 @@ export default defineConfig({
   site: 'https://caycehouse.com',
   vite: {
     plugins: [,
-      nodePolyfills() as any,
+      nodePolyfills({
+        include: ['events']
+      }) as any,
       tailwindcss()
     ]
   }
