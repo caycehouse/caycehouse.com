@@ -13,16 +13,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.5",
+    "@astrojs/check": "^0.9.6",
     "@iconify-json/mdi": "^1.2.3",
-    "@tailwindcss/vite": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.18",
     "@types/konami-code-js": "^0.8.3",
     "@types/yt-player": "^3.5.4",
-    "astro": "^5.15.6",
+    "astro": "^5.16.6",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.4",
     "konami-code-js": "^0.8.3",
-    "tailwindcss": "^4.1.17",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vite-plugin-node-polyfills": "^0.24.0",
     "yt-player": "^3.6.1"
