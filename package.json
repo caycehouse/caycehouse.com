@@ -18,13 +18,13 @@
     "@tailwindcss/vite": "^4.1.18",
     "@types/konami-code-js": "^0.8.3",
     "@types/yt-player": "^3.5.4",
-    "astro": "^5.16.6",
+    "astro": "^5.16.9",
     "astro-icon": "^1.1.5",
-    "astro-seo": "^0.8.4",
+    "astro-seo": "^1.1.0",
     "konami-code-js": "^0.8.3",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "vite-plugin-node-polyfills": "^0.24.0",
+    "vite-plugin-node-polyfills": "^0.25.0",
     "yt-player": "^3.6.1"
   },
   "repository": {
