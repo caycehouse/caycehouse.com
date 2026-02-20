@@ -19,7 +19,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
       - name: Install, build, and upload your site
-        uses: withastro/action@2226b5671ff302b175d9843add614af27e60bbfc # v5
+        uses: withastro/action@15aa0a5a1e067940253e3b259413ab2ae882a740 # v5
 
   deploy:
     needs: build
