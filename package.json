@@ -15,14 +15,14 @@
   "dependencies": {
     "@astrojs/check": "^0.9.6",
     "@iconify-json/mdi": "^1.2.3",
-    "@tailwindcss/vite": "^4.1.18",
+    "@tailwindcss/vite": "^4.2.0",
     "@types/konami-code-js": "^0.8.3",
     "@types/yt-player": "^3.5.4",
-    "astro": "^5.16.9",
+    "astro": "^5.17.3",
     "astro-icon": "^1.1.5",
     "astro-seo": "^1.1.0",
     "konami-code-js": "^0.8.3",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.0",
     "typescript": "^5.9.3",
     "vite-plugin-node-polyfills": "^0.25.0",
     "yt-player": "^3.6.1"
