@@ -2,9 +2,9 @@
 
 My personal website and blog powered by Astro.
 
-## Status
+## 🚀 Deployment
 
-[![CI](https://github.com/caycehouse/caycehouse.com/actions/workflows/ci.yml/badge.svg)](https://github.com/caycehouse/caycehouse.com/actions/workflows/ci.yml)
+Hosted on [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/) static assets, configured in `wrangler.jsonc`. Deploy with `npx wrangler deploy` (Wrangler runs `npm run build` first). Use `npx wrangler dev` to preview the site through the real Workers runtime locally.
 
 ## 🧞 Commands
 
