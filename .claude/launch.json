@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+      {
+        "name": "wrangler dev (build watch + live reload)",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["wrangler", "dev", "--live-reload"],
+        "port": 8787
+      }
+    ]
+}
