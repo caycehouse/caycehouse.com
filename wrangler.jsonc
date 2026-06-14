@@ -1,0 +1,20 @@
+{
+    "name": "caycehouse",
+    "compatibility_date": "2026-05-15",
+    "assets": {
+      // `npm run build` emits into ./dist (Astro static output).
+      "directory": "./dist",
+      // Serve a static 404 page from dist/404.html if Astro generates one; otherwise
+      // Workers returns its default 404. _redirects in dist/ is honored automatically.
+      "not_found_handling": "404-page"
+    },
+    "observability": {
+      "enabled": true
+    },
+    "build": {
+      // `wrangler dev` runs this once on start, then re-runs it whenever a file
+      // in `watch_dir` changes. Pair with `--live-reload` for browser refresh.
+      "command": "npm run build",
+      "watch_dir": "src"
+    }
+}
