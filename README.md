@@ -1,6 +1,6 @@
 # [caycehouse.com](https://caycehouse.com)
 
-My personal website and blog powered by Astro.
+My personal website powered by Astro.
 
 ## 🚀 Deployment
 

@@ -1,13 +1,18 @@
 ---
 import { SEO } from "astro-seo";
 
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
 const { title, description } = Astro.props;
+const fullTitle = title ? `${title} | Cayce House` : "Cayce House";
 ---
 <SEO
 charset="utf-8"
 description={description ?? "The personal site for Cayce House."}
-title={title}
-titleDefault="Cayce House"
+title={fullTitle}
 extend={{
   link: [
     {
