@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caycehouse.com/sitemap-index.xml
