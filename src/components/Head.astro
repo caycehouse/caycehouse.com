@@ -4,20 +4,50 @@ import { SEO } from "astro-seo";
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
+  image?: string | undefined;
+  type?: "website" | "article" | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, type } = Astro.props;
 const fullTitle = title ? `${title} | Cayce House` : "Cayce House";
+const desc = description ?? "The personal site for Cayce House.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(image ?? "/og.jpg", Astro.site).toString();
 ---
 <SEO
 charset="utf-8"
-description={description ?? "The personal site for Cayce House."}
+description={desc}
 title={fullTitle}
+canonical={canonicalURL.toString()}
+openGraph={{
+  basic: {
+    title: fullTitle,
+    type: type ?? "website",
+    image: ogImage,
+    url: canonicalURL.toString(),
+  },
+  optional: {
+    description: desc,
+    siteName: "Cayce House",
+  },
+}}
+twitter={{
+  card: "summary_large_image",
+  title: fullTitle,
+  description: desc,
+  image: ogImage,
+}}
 extend={{
   link: [
     {
       rel: "icon",
       href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>",
+    },
+    {
+      rel: "alternate",
+      type: "application/rss+xml",
+      title: "Cayce House — Blog",
+      href: new URL("/rss.xml", Astro.site).toString(),
     },
   ],
   meta: [

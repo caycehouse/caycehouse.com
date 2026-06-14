@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = [
+  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Projects" },
+  { href: "/resume", label: "Resume" },
+  { href: "/about", label: "About" },
+];
+
+const path = Astro.url.pathname;
+const isActive = (href: string): boolean =>
+  href === "/" ? path === "/" : path === href || path.startsWith(`${href}/`);
+---
+
+<header class="sticky top-0 z-30 w-full border-b border-white/10 bg-black/60 backdrop-blur print:hidden">
+  <nav class="container mx-auto flex h-14 items-center justify-between px-4">
+    <a href="/" class="font-semibold tracking-wide hover:text-indigo-400">Cayce House</a>
+    <ul class="flex items-center gap-4 text-sm md:gap-6 md:text-base">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              class={
+                isActive(l.href)
+                  ? "text-indigo-400"
+                  : "text-white/80 hover:text-white"
+              }
+            >
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="https://github.com/caycehouse"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile (opens in a new tab)"
+          class="text-white/80 hover:text-white"
+        >
+          <Icon name="mdi:github" class="text-xl" aria-hidden="true" />
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

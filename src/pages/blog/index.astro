@@ -1,0 +1,62 @@
+---
+import { getCollection } from "astro:content";
+import ContentLayout from "@layouts/ContentLayout.astro";
+import { formatDate } from "@lib/format";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
+);
+---
+
+<ContentLayout
+  title="Blog"
+  description="Writing from Cayce House on Linux, Kubernetes, automation, and infrastructure."
+>
+  <div class="mx-auto max-w-3xl">
+    <header class="mb-10">
+      <h1 class="text-4xl font-light md:text-5xl">Blog</h1>
+      <p class="mt-3 text-white/70">
+        Notes on Linux, Kubernetes, automation, and the things I'm building.
+        <a href="/rss.xml" class="text-indigo-400 hover:underline">RSS</a>
+      </p>
+    </header>
+
+    {
+      posts.length === 0 ? (
+        <p class="text-white/70">No posts yet — check back soon.</p>
+      ) : (
+        <ul class="space-y-8">
+          {posts.map((post) => (
+            <li class="border-b border-white/10 pb-8">
+              <a href={`/blog/${post.id}/`} class="group block">
+                <h2 class="text-2xl font-medium group-hover:text-indigo-400">
+                  {post.data.title}
+                </h2>
+                <p class="mt-1 text-sm text-white/60">
+                  <time datetime={post.data.pubDate.toISOString()}>
+                    {formatDate(post.data.pubDate)}
+                  </time>
+                </p>
+                <p class="mt-3 text-white/80">{post.data.description}</p>
+              </a>
+              {post.data.tags.length > 0 && (
+                <ul class="mt-3 flex flex-wrap gap-2">
+                  {post.data.tags.map((tag) => (
+                    <li>
+                      <a
+                        href={`/blog/tags/${tag}/`}
+                        class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/80 hover:bg-white/20"
+                      >
+                        #{tag}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</ContentLayout>
