@@ -12,5 +12,22 @@ const roleWithCerts = [role, ...certs].join(", ");
   <h1 class="text-2xl md:text-7xl md:font-light">Cayce House</h1>
   <h2 class="mt-2 text-4xl hidden md:block">{role}</h2>
   <h2 class="mt-2 md:hidden">{roleWithCerts}</h2>
+  <p class="mt-4 mx-auto max-w-xl text-lg text-white/80">
+    I automate and secure Linux infrastructure — and document the work here.
+  </p>
+  <div class="mt-6 flex flex-wrap justify-center gap-4">
+    <a
+      href="/blog"
+      class="rounded bg-indigo-600 px-5 py-2 font-medium text-white transition hover:bg-indigo-500"
+    >
+      Read the blog
+    </a>
+    <a
+      href="/projects"
+      class="rounded border border-white/30 px-5 py-2 font-medium text-white transition hover:bg-white/10"
+    >
+      View projects
+    </a>
+  </div>
   <SocialNav />
 </Layout>

@@ -1,0 +1,54 @@
+---
+import ContentLayout from "@layouts/ContentLayout.astro";
+import Feature from "@components/Feature.astro";
+---
+
+<ContentLayout
+  title="About"
+  description="About Cayce House — a Systems Administrator in Greenville, NC focused on Linux infrastructure, automation, and security."
+>
+  <div class="mx-auto max-w-3xl">
+    <div class="mb-2"><Feature /></div>
+    <h1 class="text-center text-4xl font-light md:text-5xl">About me</h1>
+
+    <div class="prose prose-invert mx-auto mt-8 max-w-none prose-a:text-indigo-400">
+      <p>
+        I'm Cayce House, a Systems Administrator based in Greenville, North
+        Carolina. I spend my days keeping Linux infrastructure reliable, secure,
+        and automated — and a good chunk of my evenings doing the same thing for
+        fun in a homelab.
+      </p>
+      <p>
+        I work on the ITCS Linux Team at East Carolina University, where I
+        automate provisioning and configuration management for RHEL and Debian
+        servers with Ansible and Puppet, run critical university services, and
+        act as an escalation point when things break. Along the way I've
+        architected an OKD (OpenShift) single-node platform for departmental
+        testing and wired up self-hosted CI/CD runners to speed up internal
+        development.
+      </p>
+      <p>
+        Before the Linux team I supported large Apple and clinical-device fleets
+        at ECU's School of Dental Medicine and ran lab infrastructure across
+        campus — deploying thousands of devices, building monitoring and
+        ticketing tooling, and mentoring student technicians. That mix of
+        hands-on support and infrastructure work is where I learned to keep
+        systems stable while still moving fast.
+      </p>
+      <p>
+        I'm currently pursuing a Master of Science in Information and
+        Cybersecurity Technology, with a focus on enterprise security
+        architecture and IT compliance. Outside of work I run a multi-node
+        Kubernetes cluster using GitOps workflows, build CI/CD pipelines with
+        GitHub Actions, and lean on Prometheus and Grafana to actually
+        understand what my systems are doing.
+      </p>
+      <p>
+        This site is where I document that work. Have a look at my
+        <a href="/projects">projects</a>, read the <a href="/blog">blog</a>, or
+        skim my <a href="/resume">resume</a>. If you'd like to get in touch,
+        <a href="mailto:cayce@caycehouse.com">email me</a>.
+      </p>
+    </div>
+  </div>
+</ContentLayout>

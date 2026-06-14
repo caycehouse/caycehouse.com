@@ -1,0 +1,37 @@
+---
+import Head from "@components/Head.astro";
+import Header from "@components/Header.astro";
+import EasterEgg from "@components/EasterEgg.astro";
+import "@styles/global.css";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  image?: string | undefined;
+  type?: "website" | "article" | undefined;
+}
+
+const { title, description, image, type } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <Head {title} {description} {image} {type} />
+  </head>
+  <body>
+    <div class="flex min-h-screen flex-col bg-black/60">
+      <EasterEgg />
+      <Header />
+      <main class="flex-1">
+        <div class="container mx-auto px-4 py-12">
+          <slot />
+        </div>
+      </main>
+      <footer class="border-t border-white/10 bg-black/50 p-4 text-center print:hidden">
+        <span class="text-sm text-white/70">
+          Copyright © {new Date().getFullYear()} Cayce House
+        </span>
+      </footer>
+    </div>
+  </body>
+</html>

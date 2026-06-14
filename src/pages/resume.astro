@@ -1,0 +1,121 @@
+---
+import ContentLayout from "@layouts/ContentLayout.astro";
+import {
+  summary,
+  location,
+  email,
+  skills,
+  certifications,
+  education,
+  experience,
+} from "@data/resume";
+---
+
+<ContentLayout
+  title="Resume"
+  description="Resume for Cayce House — Systems Administrator specializing in Linux infrastructure, automation, and Kubernetes."
+>
+  <div class="mx-auto max-w-3xl">
+    <header class="mb-8 border-b border-white/10 pb-6">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 class="text-4xl font-light md:text-5xl">Cayce House</h1>
+          <p class="mt-1 text-lg text-white/80">Systems Administrator</p>
+          <p class="mt-1 text-sm text-white/60">
+            {location} ·
+            <a href={`mailto:${email}`} class="text-indigo-400 hover:underline">
+              {email}
+            </a>
+          </p>
+        </div>
+        <button
+          type="button"
+          onclick="window.print()"
+          class="rounded border border-white/20 px-4 py-2 text-sm text-white/80 hover:bg-white/10 print:hidden"
+        >
+          Print / Save as PDF
+        </button>
+      </div>
+      <p class="mt-4 text-white/80">{summary}</p>
+    </header>
+
+    <section class="mb-8">
+      <h2 class="mb-4 text-2xl font-light">Experience</h2>
+      <div class="space-y-6">
+        {
+          experience.map((job) => (
+            <article>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                <h3 class="text-lg font-medium">{job.title}</h3>
+                <span class="text-sm text-white/60">
+                  {job.start} – {job.end}
+                </span>
+              </div>
+              <p class="text-sm text-white/70">
+                {job.org} · {job.location}
+              </p>
+              <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-white/80 marker:text-white/40">
+                {job.highlights.map((h) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="mb-4 text-2xl font-light">Skills</h2>
+      <dl class="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+        {
+          skills.map((group) => (
+            <div>
+              <dt class="text-sm font-medium text-white/90">{group.label}</dt>
+              <dd class="text-sm text-white/70">{group.items.join(", ")}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="mb-4 text-2xl font-light">Education</h2>
+      <div class="space-y-4">
+        {
+          education.map((ed) => (
+            <article>
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+                <h3 class="text-lg font-medium">{ed.degree}</h3>
+                <span class="text-sm text-white/60">{ed.date}</span>
+              </div>
+              <p class="text-sm text-white/70">
+                {ed.school} · {ed.location}
+              </p>
+              {ed.detail && <p class="mt-1 text-sm text-white/80">{ed.detail}</p>}
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="mb-8">
+      <h2 class="mb-4 text-2xl font-light">Certifications</h2>
+      <ul class="space-y-1 text-sm text-white/80">
+        {
+          certifications.map((cert) => (
+            <li class="flex flex-wrap justify-between gap-x-4">
+              <span>{cert.name}</span>
+              <span class="text-white/60">{cert.date}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="mb-2 text-2xl font-light">References</h2>
+      <p class="text-sm text-white/70">Available upon request.</p>
+    </section>
+  </div>
+</ContentLayout>
