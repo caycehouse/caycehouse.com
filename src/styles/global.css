@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
 body {
-  background-image: url(../assets/background.gif);
+  background-image: url(../assets/background.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #000;
   color: #fff;
+}
+
+/* Respect prefers-reduced-motion: swap the animated background for a
+   static first-frame poster so the page doesn't animate. */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    background-image: url(../assets/background-poster.webp);
+  }
 }

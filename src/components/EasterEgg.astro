@@ -1,8 +1,11 @@
 <script>
-  import YTPlayer from 'yt-player';
   import KonamiCode from 'konami-code-js';
 
-  new KonamiCode(function () {
+  new KonamiCode(async () => {
+    // Load the (heavy) YouTube player only when the code is actually entered,
+    // so it isn't shipped on every page load.
+    const { default: YTPlayer } = await import('yt-player');
+
     const player = new YTPlayer('#content', {
       width: document.body.clientWidth,
       height: document.body.clientHeight,
