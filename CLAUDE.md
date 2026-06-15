@@ -40,6 +40,6 @@ A small static site; everything lives under `src/`.
 
 ### Notable details
 
-- **The Konami easter egg.** `src/components/EasterEgg.astro` listens for the Konami code (`konami-code-js`) and, when triggered, loads a fullscreen YouTube player (`yt-player`) over the page. `yt-player` depends on Node's `events` module in the browser, which is why `astro.config.ts` includes `vite-plugin-node-polyfills` for `events`. **That polyfill is scoped to `apply: 'build'`** — applying it in dev injects a CommonJS `events` alias into Astro's ESM SSR module runner and crashes `astro dev` with `module is not defined`. In dev, Vite's dependency pre-bundler supplies `events` to the browser instead, so the easter egg still works without the polyfill plugin running.
+- **The Konami easter egg.** `src/components/EasterEgg.astro` listens for the Konami code (`konami-code-js`) and, when triggered, injects a fullscreen, looping YouTube `<iframe>` over the page. The Konami keypress is a user gesture, so the embed autoplays with sound.
 
 - **`public/_headers`.** Copied into `./dist/` at build time; Cloudflare Workers static assets reads it (along with `_redirects`, if present) to set response headers — currently `X-Content-Type-Options: nosniff` and a 1-year immutable cache on the content-hashed `/_astro/*` assets. `astro dev`/`preview` ignore it; test it locally with `npx wrangler dev`. The file format does not support comments. HSTS is configured in the Cloudflare dashboard, not here.

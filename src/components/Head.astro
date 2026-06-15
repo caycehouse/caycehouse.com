@@ -1,6 +1,4 @@
 ---
-import { SEO } from "astro-seo";
-
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
@@ -11,54 +9,30 @@ interface Props {
 const { title, description, image, type } = Astro.props;
 const fullTitle = title ? `${title} | Cayce House` : "Cayce House";
 const desc = description ?? "The personal site for Cayce House.";
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = new URL(image ?? "/og.jpg", Astro.site).toString();
+const rss = new URL("/rss.xml", Astro.site).toString();
 ---
-<SEO
-charset="utf-8"
-description={desc}
-title={fullTitle}
-canonical={canonicalURL.toString()}
-openGraph={{
-  basic: {
-    title: fullTitle,
-    type: type ?? "website",
-    image: ogImage,
-    url: canonicalURL.toString(),
-  },
-  optional: {
-    description: desc,
-    siteName: "Cayce House",
-  },
-}}
-twitter={{
-  card: "summary_large_image",
-  title: fullTitle,
-  description: desc,
-  image: ogImage,
-}}
-extend={{
-  link: [
-    {
-      rel: "icon",
-      href: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>",
-    },
-    {
-      rel: "alternate",
-      type: "application/rss+xml",
-      title: "Cayce House — Blog",
-      href: new URL("/rss.xml", Astro.site).toString(),
-    },
-  ],
-  meta: [
-    {
-      name: 'generator',
-      content: Astro.generator,
-    },
-    {
-      name: "viewport",
-      content: "width=device-width, initial-scale=1, shrink-to-fit=no",
-    },
-  ],
-}}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={desc} />
+<link rel="canonical" href={canonical} />
+<link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"
 />
+<link rel="alternate" type="application/rss+xml" title="Cayce House — Blog" href={rss} />
+
+<meta property="og:title" content={fullTitle} />
+<meta property="og:type" content={type ?? "website"} />
+<meta property="og:url" content={canonical} />
+<meta property="og:description" content={desc} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="Cayce House" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={desc} />
+<meta name="twitter:image" content={ogImage} />

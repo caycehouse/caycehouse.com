@@ -20,15 +20,11 @@
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.1",
     "@types/konami-code-js": "^0.8.3",
-    "@types/yt-player": "^3.5.4",
     "astro": "^6.4.6",
     "astro-icon": "^1.1.5",
-    "astro-seo": "^1.1.0",
     "konami-code-js": "^0.8.3",
     "tailwindcss": "^4.3.1",
-    "typescript": "^6.0.3",
-    "vite-plugin-node-polyfills": "^0.28.0",
-    "yt-player": "^3.6.1"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "wrangler": "^4.100.0"
