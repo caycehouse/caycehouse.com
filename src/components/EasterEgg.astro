@@ -1,25 +1,17 @@
 <script>
   import KonamiCode from 'konami-code-js';
 
-  new KonamiCode(async () => {
-    // Load the (heavy) YouTube player only when the code is actually entered,
-    // so it isn't shipped on every page load.
-    const { default: YTPlayer } = await import('yt-player');
-
-    const player = new YTPlayer('#content', {
-      width: document.body.clientWidth,
-      height: document.body.clientHeight,
-      keyboard: false,
-      related: false,
-    });
-
+  new KonamiCode(() => {
+    // ponytail: plain YouTube iframe instead of yt-player, which dragged in
+    // Node's `events` module and a build-time polyfill. Konami is a user
+    // gesture, so autoplay-with-sound is allowed.
+    const id = '5mGuCdlCcNM';
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&loop=1&playlist=${id}&controls=0`;
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.style.cssText =
+      'position:fixed;inset:0;width:100vw;height:100vh;border:0;z-index:50';
     document.body.style.overflow = 'hidden';
-
-    player.load('5mGuCdlCcNM', true);
-    player.setVolume(100);
-
-    player.on('ended', () => {
-      player.play();
-    });
+    document.body.appendChild(iframe);
   });
 </script>
