@@ -1,37 +1,10 @@
-export interface ResumeJob {
-  org: string;
-  title: string;
-  location: string;
-  start: string;
-  end: string;
-  highlights: string[];
-}
-
-export interface SkillGroup {
-  label: string;
-  items: string[];
-}
-
-export interface EducationEntry {
-  school: string;
-  location: string;
-  degree: string;
-  detail?: string;
-  date: string;
-}
-
-export interface CertEntry {
-  name: string;
-  date: string;
-}
-
 export const summary =
   "Systems Administrator with 5+ years of experience automating and securing Linux infrastructure in enterprise environments. Strong background in RHEL/Debian administration, configuration management (Ansible, Puppet), and Kubernetes-based platforms. Currently pursuing a Master of Science focused on enterprise security and IT compliance.";
 
 export const location = "Greenville, NC";
 export const email = "cayce@caycehouse.com";
 
-export const skills: SkillGroup[] = [
+export const skills = [
   { label: "Automation & IaC", items: ["Ansible", "Puppet", "Terraform"] },
   {
     label: "Cloud",
@@ -47,12 +20,12 @@ export const skills: SkillGroup[] = [
   { label: "Scripting", items: ["Bash", "Python"] },
 ];
 
-export const certifications: CertEntry[] = [
+export const certifications = [
   { name: "Jamf Certified Associate", date: "Nov 2022" },
   { name: "Cisco Certified Network Associate (CCNA)", date: "May 2020" },
 ];
 
-export const education: EducationEntry[] = [
+export const education = [
   {
     school: "East Carolina University",
     location: "Greenville, NC",
@@ -70,7 +43,7 @@ export const education: EducationEntry[] = [
   },
 ];
 
-export const experience: ResumeJob[] = [
+export const experience = [
   {
     org: "East Carolina University",
     title: "Systems Administrator – ITCS Linux Team",

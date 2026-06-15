@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
-import ContentLayout from "@layouts/ContentLayout.astro";
+import Layout from "@layouts/Layout.astro";
 
 const projects = (await getCollection("projects")).sort((a, b) => {
   if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
@@ -9,7 +9,7 @@ const projects = (await getCollection("projects")).sort((a, b) => {
 });
 ---
 
-<ContentLayout
+<Layout
   title="Projects"
   description="Infrastructure, homelab, and software projects built by Cayce House."
 >
@@ -67,4 +67,4 @@ const projects = (await getCollection("projects")).sort((a, b) => {
       }
     </ul>
   </div>
-</ContentLayout>
+</Layout>

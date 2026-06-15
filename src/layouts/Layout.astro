@@ -7,27 +7,31 @@ import "@styles/global.css";
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
+  image?: string | undefined;
+  type?: "website" | "article" | undefined;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, type } = Astro.props;
 ---
 
 <html lang="en">
   <head>
-    <Head {title} {description} />
+    <Head {title} {description} {image} {type} />
   </head>
   <body>
-    <div class="bg-black/50 min-h-screen" id="content">
+    <div class="flex min-h-screen flex-col bg-black/60" id="content">
       <EasterEgg />
       <Header />
-      <div class="text-center container mx-auto px-4">
-        <slot />
-      </div>
-      <nav class="fixed bottom-0 left-0 z-20 w-full p-4 flex justify-center bg-black/50" id="footer">
-        <span class="text-xl">
+      <main class="flex-1">
+        <div class="container mx-auto px-4 py-12">
+          <slot />
+        </div>
+      </main>
+      <footer class="border-t border-white/10 bg-black/50 p-4 text-center print:hidden">
+        <span class="text-sm text-white/70">
           Copyright © {new Date().getFullYear()} Cayce House
         </span>
-      </nav>
+      </footer>
     </div>
   </body>
 </html>

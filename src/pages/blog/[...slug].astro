@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import type { GetStaticPaths } from "astro";
-import ContentLayout from "@layouts/ContentLayout.astro";
+import Layout from "@layouts/Layout.astro";
 import { formatDate, readingTime } from "@lib/format";
 
 export const getStaticPaths = (async () => {
@@ -17,7 +17,7 @@ const { Content } = await render(post);
 const minutes = readingTime(post.body ?? "");
 ---
 
-<ContentLayout
+<Layout
   title={post.data.title}
   description={post.data.description}
   type="article"
@@ -59,4 +59,4 @@ const minutes = readingTime(post.body ?? "");
       <Content />
     </div>
   </article>
-</ContentLayout>
+</Layout>
