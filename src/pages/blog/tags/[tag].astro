@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import type { GetStaticPaths } from "astro";
-import ContentLayout from "@layouts/ContentLayout.astro";
+import Layout from "@layouts/Layout.astro";
 import { formatDate } from "@lib/format";
 
 export const getStaticPaths = (async () => {
@@ -21,7 +21,7 @@ export const getStaticPaths = (async () => {
 const { tag, posts } = Astro.props;
 ---
 
-<ContentLayout
+<Layout
   title={`#${tag}`}
   description={`Posts tagged ${tag}.`}
 >
@@ -48,4 +48,4 @@ const { tag, posts } = Astro.props;
       }
     </ul>
   </div>
-</ContentLayout>
+</Layout>
