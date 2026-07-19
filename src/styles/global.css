@@ -17,3 +17,33 @@ body {
     background-image: url(../assets/background-poster.webp);
   }
 }
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  #content {
+    background: transparent !important;
+  }
+
+  #content * {
+    border-color: #ccc !important;
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+
+  main > div {
+    padding: 0 !important;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  article {
+    break-inside: avoid;
+  }
+}

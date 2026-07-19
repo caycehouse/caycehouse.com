@@ -15,8 +15,8 @@ const isActive = (href: string): boolean =>
 
 <header class="sticky top-0 z-30 w-full border-b border-white/10 bg-black/60 backdrop-blur print:hidden">
   <nav class="container mx-auto flex h-14 items-center justify-between px-4">
-    <a href="/" class="font-semibold tracking-wide hover:text-indigo-400">Cayce House</a>
-    <ul class="flex items-center gap-4 text-sm md:gap-6 md:text-base">
+    <a href="/" class="text-sm font-semibold tracking-wide hover:text-indigo-400 min-[360px]:text-base">Cayce House</a>
+    <ul class="flex items-center gap-2 text-xs min-[360px]:gap-4 min-[360px]:text-sm md:gap-6 md:text-base">
       {
         links.map((l) => (
           <li>

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal website and blog for Cayce House, built with [Astro](https://astro.build) (v6) and Tailwind CSS v4. Statically generated (output to `./dist/`) and hosted on **Cloudflare Workers** using [static assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`. Deploy with `npx wrangler deploy` (Wrangler runs `npm run build` first, per the `build.command` in `wrangler.jsonc`). There is no GitHub Actions workflow for the site.
+Personal website and blog for Cayce House, built with [Astro](https://astro.build) v7 and Tailwind CSS v4. Statically generated (output to `./dist/`) and hosted on **Cloudflare Workers** using [static assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`. Deploy with `npx wrangler deploy` (Wrangler runs `npm run build` first, per the `build.command` in `wrangler.jsonc`). GitHub Actions runs the full build and internal-link check for pull requests and pushes to `main`.
 
 ## Commands
 
@@ -12,6 +12,7 @@ Personal website and blog for Cayce House, built with [Astro](https://astro.buil
 | :---------------- | :--------------------------------------------------------------- |
 | `npm run dev`     | Dev server at `localhost:4321`                                   |
 | `npm run build`   | `astro check` (type-check) then `astro build` to `./dist/`       |
+| `npm run check`   | Build the site and verify generated internal links               |
 | `npm run preview` | Preview the production build locally (Astro/Vite, port 4321)     |
 | `npm run astro`   | Astro CLI (e.g. `npm run astro -- --help`, `npm run astro add`)  |
 | `npx wrangler dev`    | Serve `./dist/` through the real Cloudflare Workers runtime (port 8787); the only local way to exercise `_headers`/`_redirects` |
@@ -19,15 +20,15 @@ Personal website and blog for Cayce House, built with [Astro](https://astro.buil
 
 Two local servers, for different purposes: `npm run dev` (Astro/Vite, port 4321) for fast app iteration, and `npx wrangler dev` (Workers runtime, port 8787 — also wired into `.claude/launch.json`) when you need to test how Cloudflare actually serves the site.
 
-There is no test suite or separate lint step. `npm run build` runs `astro check` first, so type errors fail the build — that is the de facto lint gate, and it also gates `npx wrangler deploy` (which runs the build).
+There is no unit-test suite or separate lint step. `npm run build` runs `astro check` first, so type errors fail the build. `npm run check` also validates internal links in the generated HTML. GitHub Actions and `npx wrangler deploy` both gate changes on the production build.
 
 ## Architecture
 
 A small static site; everything lives under `src/`.
 
-- `src/pages/` — file-based routes. `index.astro` is the single content page; `404.astro` is the not-found page.
+- `src/pages/` - file-based routes for the homepage, about page, resume, projects, blog posts, tag archives, RSS feed, and 404 page.
 - `src/layouts/Layout.astro` — the page shell (`<html>`/`<body>`, footer, `EasterEgg`). Takes `title`/`description` props and renders a `<slot />`. Pages wrap their content in this.
-- `src/components/Head.astro` — `<head>` metadata via `astro-seo`'s `<SEO>`; falls back to default title/description when props are absent.
+- `src/components/Head.astro` - native `<head>` metadata with default title and description fallbacks.
 - `src/components/` — presentational pieces (`Feature`, `SocialNav`, `EasterEgg`).
 
 ### Conventions
@@ -40,6 +41,6 @@ A small static site; everything lives under `src/`.
 
 ### Notable details
 
-- **The Konami easter egg.** `src/components/EasterEgg.astro` listens for the Konami code (`konami-code-js`) and, when triggered, injects a fullscreen, looping YouTube `<iframe>` over the page. The Konami keypress is a user gesture, so the embed autoplays with sound.
+- **The Konami easter egg.** `src/components/EasterEgg.astro` listens for the Konami code (`konami-code-js`) and, when triggered, creates a fullscreen privacy-enhanced YouTube iframe. The overlay can be dismissed with its close button or the Escape key.
 
 - **`public/_headers`.** Copied into `./dist/` at build time; Cloudflare Workers static assets reads it (along with `_redirects`, if present) to set response headers — currently `X-Content-Type-Options: nosniff` and a 1-year immutable cache on the content-hashed `/_astro/*` assets. `astro dev`/`preview` ignore it; test it locally with `npx wrangler dev`. The file format does not support comments. HSTS is configured in the Cloudflare dashboard, not here.

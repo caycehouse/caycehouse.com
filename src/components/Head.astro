@@ -4,9 +4,10 @@ interface Props {
   description?: string | undefined;
   image?: string | undefined;
   type?: "website" | "article" | undefined;
+  noindex?: boolean | undefined;
 }
 
-const { title, description, image, type } = Astro.props;
+const { title, description, image, type, noindex = false } = Astro.props;
 const fullTitle = title ? `${title} | Cayce House` : "Cayce House";
 const desc = description ?? "The personal site for Cayce House.";
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
@@ -18,7 +19,13 @@ const rss = new URL("/rss.xml", Astro.site).toString();
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{fullTitle}</title>
 <meta name="description" content={desc} />
-<link rel="canonical" href={canonical} />
+{
+  noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <link rel="canonical" href={canonical} />
+  )
+}
 <link
   rel="icon"
   href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>"

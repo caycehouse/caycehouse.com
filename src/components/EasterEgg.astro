@@ -2,16 +2,47 @@
   import KonamiCode from 'konami-code-js';
 
   new KonamiCode(() => {
-    // ponytail: plain YouTube iframe instead of yt-player, which dragged in
-    // Node's `events` module and a build-time polyfill. Konami is a user
-    // gesture, so autoplay-with-sound is allowed.
+    if (document.getElementById('easter-egg-overlay')) return;
+
     const id = '5mGuCdlCcNM';
+    const previousOverflow = document.body.style.overflow;
+    const overlay = document.createElement('div');
     const iframe = document.createElement('iframe');
+    const closeButton = document.createElement('button');
+
+    overlay.id = 'easter-egg-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-label', 'Surprise video');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.style.cssText =
+      'position:fixed;inset:0;background:#000;z-index:50';
+
     iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&loop=1&playlist=${id}&controls=0`;
     iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    iframe.title = 'Surprise YouTube video';
     iframe.style.cssText =
-      'position:fixed;inset:0;width:100vw;height:100vh;border:0;z-index:50';
+      'position:absolute;inset:0;width:100%;height:100%;border:0';
+
+    closeButton.type = 'button';
+    closeButton.textContent = 'Close video';
+    closeButton.style.cssText =
+      'position:absolute;top:1rem;right:1rem;z-index:1;border:1px solid #fff;border-radius:.25rem;background:#000;color:#fff;padding:.5rem .75rem;cursor:pointer';
+
+    const closeOverlay = () => {
+      overlay.remove();
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeydown);
+    };
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') closeOverlay();
+    };
+
+    closeButton.addEventListener('click', closeOverlay, { once: true });
+    document.addEventListener('keydown', handleKeydown);
+    overlay.append(iframe, closeButton);
     document.body.style.overflow = 'hidden';
-    document.body.appendChild(iframe);
+    document.body.appendChild(overlay);
+    closeButton.focus();
   });
 </script>
