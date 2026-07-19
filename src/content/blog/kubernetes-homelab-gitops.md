@@ -10,7 +10,7 @@ compute, but because it's the best lab I've found for practicing the patterns I
 care about professionally: declarative infrastructure, repeatable deploys, and
 real observability.
 
-> Note: this is a starter post — I'll expand each section with the actual
+> Note: this is a starter post. I'll expand each section with the actual
 > manifests and gotchas over time.
 
 ## The GitOps loop
@@ -18,7 +18,7 @@ real observability.
 Everything that runs in the cluster is described in Git. I lean on **Helm** for
 packaged applications and **Kustomize** for environment-specific overlays, so a
 change is a commit and a deploy is a merge. The cluster converges to whatever
-the repository says it should be — no manual `kubectl apply` drift.
+the repository says it should be, with no manual `kubectl apply` drift.
 
 ## CI/CD with GitHub Actions
 

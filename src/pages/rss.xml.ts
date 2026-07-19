@@ -8,7 +8,7 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: "Cayce House — Blog",
+    title: "Cayce House - Blog",
     description:
       "Writing from Cayce House on Linux, Kubernetes, automation, and infrastructure.",
     site: context.site ?? "https://caycehouse.com",

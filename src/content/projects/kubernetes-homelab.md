@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes Homelab"
-summary: "A multi-node Kubernetes cluster run with GitOps workflows — Helm and Kustomize for deploys, GitHub Actions for CI/CD, and Prometheus/Grafana for observability."
+summary: "A multi-node Kubernetes cluster run with GitOps workflows: Helm and Kustomize for deploys, GitHub Actions for CI/CD, and Prometheus/Grafana for observability."
 tech: ["Kubernetes", "Helm", "Kustomize", "GitHub Actions", "Prometheus", "Grafana"]
 featured: true
 order: 1

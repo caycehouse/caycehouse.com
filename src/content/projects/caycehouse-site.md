@@ -1,6 +1,6 @@
 ---
 title: "caycehouse.com"
-summary: "This site — a statically generated personal portfolio and blog built with Astro and Tailwind CSS, deployed on Cloudflare Workers static assets."
+summary: "This site is a statically generated personal portfolio and blog built with Astro and Tailwind CSS, then deployed on Cloudflare Workers static assets."
 tech: ["Astro", "Tailwind CSS", "TypeScript", "Cloudflare Workers"]
 repo: "https://github.com/caycehouse/caycehouse.com"
 demo: "https://caycehouse.com"
@@ -13,5 +13,5 @@ The site you're looking at. Statically generated with **Astro** and styled with
 Workers** static assets.
 
 It's intentionally small and fast, with a content-collection-backed blog and
-projects section so it's easy to keep current — and a Konami-code easter egg,
+projects section so it's easy to keep current, plus a Konami-code easter egg,
 because why not.

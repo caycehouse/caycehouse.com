@@ -23,7 +23,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 
     {
       posts.length === 0 ? (
-        <p class="text-white/70">No posts yet — check back soon.</p>
+        <p class="text-white/70">No posts yet. Check back soon.</p>
       ) : (
         <ul class="space-y-8">
           {posts.map((post) => (
