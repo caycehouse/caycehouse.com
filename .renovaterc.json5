@@ -1,10 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    ":skipStatusChecks",
+    "config:recommended",
+    "helpers:pinGitHubActionDigests",
+    "group:allNonMajor",
     "schedule:monthly",
-    "github>caycehouse/renovate-config",
-    "github>caycehouse/renovate-config:autoMerge.json5",
-    "github>caycehouse/caycehouse.com//.renovate/groups.json5",
-  ]
+    "security:minimumReleaseAgeNpm",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":timezone(America/New_York)",
+  ],
+  "packageRules": [
+    {
+      "description": "Require approval for major upgrades",
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true,
+    },
+  ],
 }
