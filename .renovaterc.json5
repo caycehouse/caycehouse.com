@@ -3,7 +3,6 @@
   "extends": [
     "config:recommended",
     "helpers:pinGitHubActionDigests",
-    "schedule:monthly",
     "security:minimumReleaseAgeNpm",
     ":dependencyDashboard",
     ":semanticCommits",
@@ -55,11 +54,6 @@
       "automergeType": "branch",
       "minimumReleaseAge": "1 minute",
       "ignoreTests": true,
-    },
-    {
-      "description": "Require approval for major upgrades",
-      "matchUpdateTypes": ["major"],
-      "dependencyDashboardApproval": true,
     },
   ],
 }
