@@ -1,0 +1,2 @@
+[tools]
+node = "{{ read_file(path='.node-version') | trim }}"
