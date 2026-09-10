@@ -2,12 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
-    "helpers:pinGitHubActionDigests",
+    "helpers:pinGitHubActionDigestsToSemver",
     "security:minimumReleaseAgeNpm",
+    ":automergeBranch",
     ":dependencyDashboard",
     ":semanticCommits",
     ":timezone(America/New_York)",
   ],
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "packageRules": [
     {
       "description": "Auto-merge stable npm updates",
