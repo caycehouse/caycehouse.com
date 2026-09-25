@@ -30,7 +30,7 @@
     "astro-icon": "^1.2.0",
     "konami-code-js": "^0.8.3",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.0"
   },
   "devDependencies": {
     "wrangler": "^4.130.0"
