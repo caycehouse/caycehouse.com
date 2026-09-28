@@ -5,8 +5,15 @@
     "helpers:pinGitHubActionDigestsToSemver",
     "security:minimumReleaseAgeNpm",
     ":semanticCommits",
+    ":timezone(America/New_York)",
   ],
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "schedule": ["before 3am on the first day of the month"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "schedule": ["before 3am on the first day of the month"],
+  },
   "packageRules": [
     {
       "description": "Auto-merge non-major npm updates",
