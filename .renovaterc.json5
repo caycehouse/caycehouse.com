@@ -1,47 +1,73 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "helpers:pinGitHubActionDigestsToSemver",
-    "security:minimumReleaseAgeNpm",
-    ":semanticCommits",
-    ":timezone(America/New_York)",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    'helpers:pinGitHubActionDigestsToSemver',
+    'security:minimumReleaseAgeNpm',
+    ':semanticCommits',
+    ':timezone(America/New_York)',
   ],
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "schedule": ["before 3am on the first day of the month"],
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "schedule": ["before 3am on the first day of the month"],
+  dependencyDashboard: {
+    title: 'Renovate Dashboard 🤖',
   },
-  "packageRules": [
+  schedule: [
+    'before 3am on the first day of the month',
+  ],
+  lockFileMaintenance: {
+    enabled: true,
+    automerge: true,
+    schedule: [
+      'before 3am on the first day of the month',
+    ],
+  },
+  packageRules: [
     {
-      "description": "Auto-merge non-major npm updates",
-      "matchManagers": ["npm"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "npm dependencies",
-      "automerge": true,
-      "automergeType": "pr",
-      "ignoreTests": false,
+      description: 'Auto-merge non-major npm updates',
+      matchManagers: [
+        'npm',
+      ],
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+      ],
+      groupName: 'npm dependencies',
+      automerge: true,
+      automergeType: 'pr',
+      ignoreTests: false,
     },
     {
-      "description": "Auto-merge GitHub Actions",
-      "matchManagers": ["github-actions"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "automerge": true,
-      "automergeType": "branch",
-      "minimumReleaseAge": "3 days",
-      "ignoreTests": true,
+      description: 'Auto-merge GitHub Actions',
+      matchManagers: [
+        'github-actions',
+      ],
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+        'digest',
+      ],
+      automerge: true,
+      automergeType: 'branch',
+      minimumReleaseAge: '3 days',
+      ignoreTests: true,
     },
     {
-      "description": "Auto-merge trusted GitHub Actions",
-      "matchManagers": ["github-actions"],
-      "matchPackageNames": ["/^actions\\//", "/^renovatebot\\//"],
-      "matchUpdateTypes": ["minor", "patch", "digest"],
-      "automerge": true,
-      "automergeType": "branch",
-      "minimumReleaseAge": "1 minute",
-      "ignoreTests": true,
+      description: 'Auto-merge trusted GitHub Actions',
+      matchManagers: [
+        'github-actions',
+      ],
+      matchPackageNames: [
+        '/^actions\\//',
+        '/^renovatebot\\//',
+      ],
+      matchUpdateTypes: [
+        'minor',
+        'patch',
+        'digest',
+      ],
+      automerge: true,
+      automergeType: 'branch',
+      minimumReleaseAge: '1 minute',
+      ignoreTests: true,
     },
   ],
 }
