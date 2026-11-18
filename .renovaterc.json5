@@ -8,11 +8,11 @@
     ":timezone(America/New_York)",
   ],
   "dependencyDashboard": { "title": "Renovate Dashboard 🤖" },
-  "schedule": ["before 3am on the first day of the month"],
+  "schedule": ["* * 1 * *"],
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "schedule": ["before 3am on the first day of the month"],
+    "schedule": ["* * 1 * *"],
   },
   "packageRules": [
     {
