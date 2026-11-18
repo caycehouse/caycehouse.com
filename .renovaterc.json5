@@ -7,7 +7,7 @@
     ":semanticCommits",
     ":timezone(America/New_York)",
   ],
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "dependencyDashboard": { "title": "Renovate Dashboard 🤖" },
   "schedule": ["before 3am on the first day of the month"],
   "lockFileMaintenance": {
     "enabled": true,
