@@ -17,11 +17,15 @@
   },
   "packageRules": [
     {
+      "description": "Bump npm ranges in package.json to the new version",
+      "matchManagers": ["npm"],
+      "rangeStrategy": "bump",
+    },
+    {
       "description": "Auto-merge non-major npm updates",
       "matchManagers": ["npm"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "npm dependencies",
-      "rangeStrategy": "bump",
       "automerge": true,
       "automergeType": "pr",
       "ignoreTests": false,
