@@ -12,18 +12,18 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/sitemap": "^3.7.6",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/typography": "^0.5.20",
-    "@tailwindcss/vite": "^4.3.3",
+    "@tailwindcss/vite": "^4.3.5",
     "@types/konami-code-js": "^0.8.3",
-    "astro": "^7.3.2",
+    "astro": "^7.4.13",
     "astro-icon": "^1.2.0",
     "konami-code-js": "^0.8.3",
-    "tailwindcss": "^4.3.3",
+    "tailwindcss": "^4.3.5",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "wrangler": "^4.130.0"
+    "wrangler": "^4.166.0"
   }
 }
