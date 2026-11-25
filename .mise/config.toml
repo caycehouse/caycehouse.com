@@ -5,7 +5,7 @@ min_version = "2026.11.1"
 idiomatic_version_file_enable_tools = ["node"]
 
 [tools]
-pnpm = "12.21.0"
+pnpm = "12.23.0"
 
 [tasks.build]
 description = "Build the site (Astro) into dist/, failing on a broken internal link"
