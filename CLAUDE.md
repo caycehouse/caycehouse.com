@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal website and blog for Cayce House, built with [Astro](https://astro.build) v7 and Tailwind CSS v4. Statically generated (output to `./dist/`) and hosted on **Cloudflare Workers** using [static assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`. Deploy with `pnpm exec wrangler deploy` (Wrangler runs `pnpm run build` first, per the `build.command` in `wrangler.jsonc`). GitHub Actions runs the full build and internal-link check for pull requests and pushes to `main`.
+Personal website and blog for Cayce House, built with [Astro](https://astro.build) v7 and Tailwind CSS v4. Statically generated (output to `./dist/`) and hosted on **Cloudflare Workers** using [static assets](https://developers.cloudflare.com/workers/static-assets/), configured in `wrangler.jsonc`. Cloudflare Workers Builds deploys every push to `main` by running `pnpm exec wrangler deploy` (Wrangler runs `pnpm run build` first, per the `build.command` in `wrangler.jsonc`), and builds preview versions for pull requests. GitHub Actions runs the full build and internal-link check for pull requests and pushes to `main`.
 
 ## Commands
 
@@ -18,11 +18,11 @@ Node is pinned in `.node-version` and pnpm in `.mise/config.toml` and `package.j
 | `pnpm run preview` | Preview the production build locally (Astro/Vite, port 4321)    |
 | `pnpm exec astro`  | Astro CLI (e.g. `pnpm exec astro --help`, `pnpm exec astro add`) |
 | `pnpm exec wrangler dev`    | Serve `./dist/` through the real Cloudflare Workers runtime (port 8787); the only local way to exercise `_headers`/`_redirects` |
-| `pnpm exec wrangler deploy` | Build and deploy to Cloudflare Workers                |
+| `pnpm exec wrangler deploy` | Build and deploy by hand (Workers Builds normally does this on push to `main`) |
 
 Two local servers serve different purposes: `pnpm run dev` (Astro/Vite, port 4321) supports fast app iteration, while `pnpm exec wrangler dev` (Workers runtime, port 8787, also wired into `.claude/launch.json`) tests how Cloudflare serves the site.
 
-There is no unit-test suite, type-check, or lint step. `pnpm run check` builds and validates internal links in the generated HTML. GitHub Actions and `pnpm exec wrangler deploy` both gate changes on the production build.
+There is no unit-test suite, type-check, or lint step. `pnpm run check` builds and validates internal links in the generated HTML. GitHub Actions and Workers Builds are both required checks on `main`, and both run the production build.
 
 ## Architecture
 

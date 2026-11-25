@@ -4,7 +4,7 @@ My personal website powered by Astro.
 
 ## 🚀 Deployment
 
-Hosted on [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/) static assets, configured in `wrangler.jsonc`. Deploy with `pnpm exec wrangler deploy` (Wrangler runs `pnpm run build` first). Use `pnpm exec wrangler dev` to preview the site through the real Workers runtime locally.
+Hosted on [Cloudflare Workers](https://developers.cloudflare.com/workers/static-assets/) static assets, configured in `wrangler.jsonc`. Cloudflare Workers Builds deploys every push to `main` by running `pnpm exec wrangler deploy`, which runs `pnpm run build` first. Use `pnpm exec wrangler dev` to preview the site through the real Workers runtime locally.
 
 ## 🧞 Commands
 

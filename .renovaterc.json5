@@ -31,16 +31,6 @@
       "ignoreTests": false,
     },
     {
-      "description": "Group mise tool bumps and auto-merge non-major ones",
-      "matchManagers": ["mise"],
-      "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "toolchain",
-      "minimumReleaseAge": "3 days",
-      "automerge": true,
-      "automergeType": "pr",
-      "ignoreTests": false,
-    },
-    {
       "description": "Bump the Node pin (.node-version) and pnpm pins (mise, packageManager) together",
       "matchDepNames": ["node", "pnpm"],
       "matchUpdateTypes": ["minor", "patch"],
