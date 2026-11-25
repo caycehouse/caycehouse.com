@@ -37,6 +37,13 @@
       "ignoreTests": false,
     },
     {
+      "description": "Keep the pnpm pin in package.json (read by Workers Builds) in the same PR as the mise pins",
+      "matchDepNames": ["node", "pnpm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "toolchain",
+      "minimumReleaseAge": "3 days",
+    },
+    {
       "description": "A 0.x minor can break, so split it from the group and don't auto-merge it",
       "matchUpdateTypes": ["minor"],
       "matchCurrentVersion": "/^v?0\\./",
