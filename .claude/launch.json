@@ -3,8 +3,8 @@
     "configurations": [
       {
         "name": "wrangler dev (build watch + live reload)",
-        "runtimeExecutable": "npx",
-        "runtimeArgs": ["wrangler", "dev", "--live-reload"],
+        "runtimeExecutable": "pnpm",
+        "runtimeArgs": ["exec", "wrangler", "dev", "--live-reload"],
         "port": 8787
       }
     ]

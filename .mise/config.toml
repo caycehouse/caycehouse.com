@@ -1,0 +1,13 @@
+min_version = "2026.11.1"
+
+[tools]
+node = "26.13.1"
+pnpm = "12.21.0"
+
+[tasks.build]
+description = "Build the site (Astro) into dist/, failing on a broken internal link"
+run = ["pnpm install --frozen-lockfile", "pnpm run check"]
+
+[tasks.serve]
+description = "Serve the site locally with live reload"
+run = ["pnpm install --frozen-lockfile", "pnpm run dev"]

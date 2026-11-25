@@ -1,25 +1,15 @@
 {
   "name": "caycehouse.com",
   "private": true,
-  "description": "My personal website powered by Astro",
   "type": "module",
-  "version": "2.0.0",
-  "author": "Cayce House <cayce@caycehouse.com>",
-  "license": "LGPL-3.0",
-  "engines": {
-    "node": ">=22.12.0",
-    "npm": ">=9.6.5"
-  },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
-    "check": "npm run build && npm run check:links",
+    "build": "astro build",
+    "check": "pnpm run build && pnpm run check:links",
     "check:links": "node scripts/check-links.mjs",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.10",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@iconify-json/mdi": "^1.2.3",
@@ -34,17 +24,5 @@
   },
   "devDependencies": {
     "wrangler": "^4.130.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/caycehouse/caycehouse.com"
-  },
-  "bugs": {
-    "email": "cayce@caycehouse.com"
-  },
-  "allowScripts": {
-    "esbuild@0.28.1": true,
-    "fsevents@2.3.3": true,
-    "workerd@1.20260908.1": true
   }
 }
