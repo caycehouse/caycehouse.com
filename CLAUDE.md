@@ -8,7 +8,7 @@ Personal website and blog for Cayce House, built with [Astro](https://astro.buil
 
 ## Commands
 
-Node and pnpm are pinned in `.mise/config.toml` (`mise install`); build scripts are allowlisted under `allowBuilds` in `pnpm-workspace.yaml`.
+Node is pinned in `.node-version` and pnpm in `.mise/config.toml` and `package.json` `packageManager` (`mise install`); Cloudflare Workers Builds reads `.node-version` and `packageManager`, not mise, and Renovate bumps all three together; build scripts are allowlisted under `allowBuilds` in `pnpm-workspace.yaml`.
 
 | Command           | Action                                                            |
 | :---------------- | :--------------------------------------------------------------- |

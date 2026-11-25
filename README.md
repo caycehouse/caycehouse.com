@@ -8,7 +8,7 @@ Hosted on [Cloudflare Workers](https://developers.cloudflare.com/workers/static-
 
 ## 🧞 Commands
 
-Node and pnpm versions are pinned in `.mise/config.toml`; run `mise install` first. All commands are run from the root of the project, from a terminal:
+Node is pinned in `.node-version` and pnpm in `.mise/config.toml` (mirrored in `packageManager`); run `mise install` first. All commands are run from the root of the project, from a terminal:
 
 | Command                 | Action                                          |
 | :---------------------- | :---------------------------------------------- |

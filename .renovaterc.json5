@@ -31,7 +31,7 @@
       "ignoreTests": false,
     },
     {
-      "description": "Group the Node and pnpm pins in .mise/config.toml and auto-merge non-major bumps",
+      "description": "Group mise tool bumps and auto-merge non-major ones",
       "matchManagers": ["mise"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "toolchain",
@@ -41,11 +41,13 @@
       "ignoreTests": false,
     },
     {
-      "description": "Keep the pnpm pin in package.json (read by Workers Builds) in the same PR as the mise pins",
+      "description": "Bump the Node pin (.node-version) and pnpm pins (mise, packageManager) together",
       "matchDepNames": ["node", "pnpm"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "toolchain",
       "minimumReleaseAge": "3 days",
+      "automerge": true,
+      "automergeType": "pr",
     },
     {
       "description": "A 0.x minor can break, so split it from the group and don't auto-merge it",

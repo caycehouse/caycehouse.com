@@ -1,7 +1,10 @@
 min_version = "2026.11.1"
 
+[settings]
+# Node is pinned in .node-version, which Cloudflare Workers Builds also reads.
+idiomatic_version_file_enable_tools = ["node"]
+
 [tools]
-node = "26.13.1"
 pnpm = "12.21.0"
 
 [tasks.build]
